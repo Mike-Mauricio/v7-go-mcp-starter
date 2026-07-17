@@ -1,0 +1,864 @@
+{
+  "projects": [
+    {
+      "id": "project_3x8ubCrsr-U5-GYE",
+      "name": "NDA Compliance Review and Redlines",
+      "type": "regular",
+      "description": "“NDA Compliance Review and Redlines” ingests an NDA file and internal NDA Guidelines. It systematically evaluates each clause against standards, flags issues, and proposes redlines. Outputs include per-section approvals/escalations/red flags, a consolidated redline summary, and an overall classification (Automatically Approved/To Review/Red Flags/Draft V2).",
+      "properties": [
+        {
+          "id": "property_T7A2GEq6G-XyZP3H",
+          "name": "NDA",
+          "type": "file",
+          "description": null,
+          "tool": "manual",
+          "inputs": [],
+          "tool_config": {
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_ARVRChYBhSv3MO00",
+          "name": "Entity and Document Basics",
+          "type": "text",
+          "description": "Refer to the @<Pproperty_O6E-jQXfcW1DBw1G> \n\nDoes the @<Pproperty_T7A2GEq6G-XyZP3H> follow the guidelines for Entity Verification and Document basics?\n\n Is the Company Information correctly displayed?\nApply some lenience.\n\nIf so, respond with “Approved” (or Acceptable with Caution, if the guidelines state so)\n\nIf anything requires escalation, type “Needs Escalation” and suggest:\n1. Which elements are non-compliant and need escalation.\n2. Suggest a redline to send back to the client in order to make the section compliant.\nIf anything is a red flag, and certainly requires a redline, type “Red Flag” before the element, instead of “Needs Escalation”, as a list.",
+          "tool": "gpt_5",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_O6E-jQXfcW1DBw1G",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_T7A2GEq6G-XyZP3H",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_qghW4wlsOc2MGtw_",
+          "name": "1. Confidential Information",
+          "type": "text",
+          "description": "Refer to the @<Pproperty_O6E-jQXfcW1DBw1G>\n\nDoes the @<Pproperty_T7A2GEq6G-XyZP3H> follow the guidelines for the Definition of Confidential Information?\nIf so, respond with “Approved”\nIf anything requires escalation, type “Needs Escalation” and suggest:\n1. Which elements are non-compliant and need escalation.\n2. Suggest a redline to send back to the client in order to make the section compliant.\nIf anything is a red flag, and certainly requires a redline, type “Red Flag” and repeat the two steps above.",
+          "tool": "gpt_5",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_O6E-jQXfcW1DBw1G",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_T7A2GEq6G-XyZP3H",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_SD4Mk_-GImg500yH",
+          "name": "2. Term and Termination",
+          "type": "text",
+          "description": "Refer to the @<Pproperty_O6E-jQXfcW1DBw1G>\nDoes the @<Pproperty_T7A2GEq6G-XyZP3H> follow the guidelines for the Term and Termination?\nIf so, respond with “Approved”\nIf anything requires escalation, type “Needs Escalation” and suggest:\n1. Which elements are non-compliant and need escalation.\n2. Suggest a redline to send back to the client in order to make the section compliant.\nIf anything is a red flag, and certainly requires a redline, type “Red Flag” and repeat the two steps above.",
+          "tool": "gpt_5",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_O6E-jQXfcW1DBw1G",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_T7A2GEq6G-XyZP3H",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_Ol0HGMuXCmSMukFZ",
+          "name": "3. Governing Law and Jurisdiction",
+          "type": "text",
+          "description": "Refer to the @<Pproperty_O6E-jQXfcW1DBw1G>\nDoes the @<Pproperty_T7A2GEq6G-XyZP3H> follow the guidelines for the \nGoverning Law and Jurisdiction? Apply some lenience.\nIf so, respond with “Approved”\nIf anything requires escalation, type “Needs Escalation” and suggest:\n1. Which elements are non-compliant and need escalation.\n2. Suggest a redline to send back to the client in order to make the section compliant.\nIf anything is a red flag, and certainly requires a redline, type “Red Flag” and repeat the two steps above.",
+          "tool": "gpt_5",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_T7A2GEq6G-XyZP3H",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_O6E-jQXfcW1DBw1G",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_d9jzGrnv9Rc5gQpv",
+          "name": "4. Security and Confidence",
+          "type": "text",
+          "description": "Refer to the @<Pproperty_O6E-jQXfcW1DBw1G>\nDoes the @<Pproperty_T7A2GEq6G-XyZP3H> follow the guidelines for the Security Requirements and Confidentiality Marking Requirements? Apply some lenience.\nIf so, respond with “Approved” (or Acceptable with Caution, if the guidelines state so)\nIf anything requires escalation, type “Needs Escalation” and suggest:\n1. Which elements are non-compliant and need escalation.\n2. Suggest a redline to send back to the client in order to make the section compliant.\nIf anything is a red flag, and certainly requires a redline, type “Red Flag” before the element, instead of “Needs Escalation”, as a list.",
+          "tool": "gpt_5",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_O6E-jQXfcW1DBw1G",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_T7A2GEq6G-XyZP3H",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_8OqOM0vhS7U-1Myx",
+          "name": "5. Representative and Permitted Disclosures",
+          "type": "text",
+          "description": "Refer to the @<Pproperty_O6E-jQXfcW1DBw1G>\nDoes the @<Pproperty_T7A2GEq6G-XyZP3H> follow the guidelines for \nRepresentatives and Permitted Disclosures? Apply some lenience.\nIf so, respond with “Approved” (or Acceptable with Caution, if the guidelines state so)\nIf anything requires escalation, type “Needs Escalation” and suggest:\n1. Which elements are non-compliant and need escalation.\n2. Suggest a redline to send back to the client in order to make the section compliant.\nIf anything is a red flag, and certainly requires a redline, type “Red Flag” before the element, instead of “Needs Escalation”, as a list.",
+          "tool": "gpt_5",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_O6E-jQXfcW1DBw1G",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_T7A2GEq6G-XyZP3H",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_1w0qt26ggo_OTWmk",
+          "name": "6. Return or Destruction",
+          "type": "text",
+          "description": "Refer to the @<Pproperty_O6E-jQXfcW1DBw1G>\nDoes the @<Pproperty_T7A2GEq6G-XyZP3H> follow the guidelines for the \nReturn or Destruction? Apply some lenience.\nIf so, respond with “Approved” (or Acceptable with Caution, if the guidelines state so)\nIf anything requires escalation, type “Needs Escalation” and suggest:\n1. Which elements are non-compliant and need escalation.\n2. Suggest a redline to send back to the client in order to make the section compliant.\nIf anything is a red flag, and certainly requires a redline, type “Red Flag” before the element, instead of “Needs Escalation”, as a list.",
+          "tool": "gpt_5",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_O6E-jQXfcW1DBw1G",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_T7A2GEq6G-XyZP3H",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_Yhq3KiiZQRR-WAbn",
+          "name": "7. Use Restrictions",
+          "type": "text",
+          "description": "Refer to the @<Pproperty_O6E-jQXfcW1DBw1G>\nDoes the @<Pproperty_T7A2GEq6G-XyZP3H> follow the guidelines for the \n7. Use Restrictions? Apply some lenience.\nIf so, respond with “Approved” (or Acceptable with Caution, if the guidelines state so)\nIf anything requires escalation, type “Needs Escalation” and suggest:\n1. Which elements are non-compliant and need escalation.\n2. Suggest a redline to send back to the client in order to make the section compliant.\nIf anything is a red flag, and certainly requires a redline, type “Red Flag” before the element, instead of “Needs Escalation”, as a list.",
+          "tool": "gpt_5",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_O6E-jQXfcW1DBw1G",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_T7A2GEq6G-XyZP3H",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_g9Lr_5dMuC4bGxC_",
+          "name": "8. Non-Solicitation / Non-Compete",
+          "type": "text",
+          "description": "Refer to the @<Pproperty_O6E-jQXfcW1DBw1G>\nDoes the @<Pproperty_T7A2GEq6G-XyZP3H> follow the guidelines for the \nNon-Solicitation/Non-Compete? Apply some lenience.\nIf so, respond with “Approved” (or Acceptable with Caution, if the guidelines state so. If you are applying any leniency, Accept with Caution).\nIf anything requires escalation, type “Needs Escalation” and suggest:\n1. Which elements are non-compliant and need escalation.\n2. Suggest a redline to send back to the client in order to make the section compliant.\nIf anything is a red flag, and certainly requires a redline, type “Red Flag” before the element, instead of “Needs Escalation”, as a list.",
+          "tool": "gpt_5",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_O6E-jQXfcW1DBw1G",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_T7A2GEq6G-XyZP3H",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_MHWOYHG0EYHmt5b-",
+          "name": "Summary of Redlines",
+          "type": "text",
+          "description": "Create a summary of the suggested red-lines and changes that we will need to make, in order to make the NDA compliant with our @<Pproperty_O6E-jQXfcW1DBw1G>",
+          "tool": "gpt_5",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_O6E-jQXfcW1DBw1G",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_ARVRChYBhSv3MO00",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_qghW4wlsOc2MGtw_",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_SD4Mk_-GImg500yH",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_Ol0HGMuXCmSMukFZ",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_d9jzGrnv9Rc5gQpv",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_8OqOM0vhS7U-1Myx",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_1w0qt26ggo_OTWmk",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_Yhq3KiiZQRR-WAbn",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_g9Lr_5dMuC4bGxC_",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_VBiKOGjBwXWtWsYJ",
+          "name": "Overall Score",
+          "type": "single_select",
+          "config": {
+            "options": [
+              {
+                "value": "Automatically Approved",
+                "color": "rainbow-06",
+                "tool_fallback": false
+              },
+              {
+                "value": "To Review by Legal",
+                "color": "rainbow-04",
+                "tool_fallback": false
+              },
+              {
+                "value": "Red Flags - Requires Changes",
+                "color": "rainbow-01",
+                "tool_fallback": false
+              },
+              {
+                "value": "Draft V2",
+                "color": "rainbow-01",
+                "tool_fallback": false
+              }
+            ],
+            "default_option": null
+          },
+          "description": "Do any of these guidelines check present at least one red flag clearly stated in the text?? \nIf so, classify as Red Flag. \nOtherwise, check for any Needs Escalation mentions, and mark it as so. If there are no “Needs Escalation” paragraphs, mark it as Automatically Approved. Acceptable with Caution counts as Approved. Apply some lenience.",
+          "tool": "gpt_5",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_ARVRChYBhSv3MO00",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_qghW4wlsOc2MGtw_",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_SD4Mk_-GImg500yH",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_Ol0HGMuXCmSMukFZ",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_d9jzGrnv9Rc5gQpv",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_8OqOM0vhS7U-1Myx",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_1w0qt26ggo_OTWmk",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_Yhq3KiiZQRR-WAbn",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_g9Lr_5dMuC4bGxC_",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_O6E-jQXfcW1DBw1G",
+          "name": "NDA Guidelines",
+          "type": "file",
+          "description": null,
+          "tool": "manual",
+          "inputs": [],
+          "tool_config": {
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_bHyROkoEELO4ACMi",
+          "name": "Rewritten NDA",
+          "type": "file",
+          "description": "Rewrite me this NDA but change the clauses that disagree with @<Pproperty_O6E-jQXfcW1DBw1G>to align with our guidelines.",
+          "tool": "gpt_5",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_T7A2GEq6G-XyZP3H",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_O6E-jQXfcW1DBw1G",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        }
+      ],
+      "views": [
+        {
+          "id": "view_AxrDkkG5Vl3GUd1p",
+          "name": "Automatically Approved",
+          "filters": [
+            {
+              "property_id": "property_VBiKOGjBwXWtWsYJ",
+              "select_option_value": "Automatically Approved"
+            }
+          ],
+          "property_ids": [
+            "property_T7A2GEq6G-XyZP3H"
+          ],
+          "property_layouts": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 4,
+              "property_id": "property_T7A2GEq6G-XyZP3H",
+              "height": 4
+            }
+          ],
+          "num_pinned_properties": 0,
+          "property_options": [
+            {
+              "property_id": "property_T7A2GEq6G-XyZP3H",
+              "block_workers_edits": false
+            }
+          ]
+        },
+        {
+          "id": "view_gXJMnyMyNoYjRbuT",
+          "name": "To Review by Legal",
+          "filters": [
+            {
+              "property_id": "property_VBiKOGjBwXWtWsYJ",
+              "select_option_value": "To Review by Legal"
+            }
+          ],
+          "property_ids": [
+            "property_T7A2GEq6G-XyZP3H",
+            "property_bHyROkoEELO4ACMi"
+          ],
+          "property_layouts": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 4,
+              "property_id": "property_T7A2GEq6G-XyZP3H",
+              "height": 4
+            },
+            {
+              "x": 4,
+              "y": 0,
+              "width": 4,
+              "property_id": "property_bHyROkoEELO4ACMi",
+              "height": 4
+            }
+          ],
+          "num_pinned_properties": 0,
+          "property_options": [
+            {
+              "property_id": "property_T7A2GEq6G-XyZP3H",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_bHyROkoEELO4ACMi",
+              "block_workers_edits": false
+            }
+          ]
+        },
+        {
+          "id": "view_PoQQwdCqJisSgc4O",
+          "name": "Red Flags - Requires Changes",
+          "filters": [
+            {
+              "property_id": "property_VBiKOGjBwXWtWsYJ",
+              "select_option_value": "Red Flags - Requires Changes"
+            }
+          ],
+          "property_ids": [
+            "property_T7A2GEq6G-XyZP3H"
+          ],
+          "property_layouts": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 4,
+              "property_id": "property_T7A2GEq6G-XyZP3H",
+              "height": 4
+            }
+          ],
+          "num_pinned_properties": 0,
+          "property_options": [
+            {
+              "property_id": "property_T7A2GEq6G-XyZP3H",
+              "block_workers_edits": false
+            }
+          ]
+        }
+      ],
+      "triggers": [],
+      "main_view": {
+        "id": "view_cdxk9oTi-uyoCQb7",
+        "filters": [],
+        "property_ids": [
+          "property_T7A2GEq6G-XyZP3H",
+          "property_O6E-jQXfcW1DBw1G",
+          "property_VBiKOGjBwXWtWsYJ",
+          "property_ARVRChYBhSv3MO00",
+          "property_qghW4wlsOc2MGtw_",
+          "property_SD4Mk_-GImg500yH",
+          "property_Ol0HGMuXCmSMukFZ",
+          "property_d9jzGrnv9Rc5gQpv",
+          "property_8OqOM0vhS7U-1Myx",
+          "property_1w0qt26ggo_OTWmk",
+          "property_Yhq3KiiZQRR-WAbn",
+          "property_g9Lr_5dMuC4bGxC_",
+          "property_MHWOYHG0EYHmt5b-"
+        ],
+        "property_layouts": [
+          {
+            "x": 8,
+            "y": 0,
+            "width": 4,
+            "property_id": "property_T7A2GEq6G-XyZP3H",
+            "height": 13
+          },
+          {
+            "x": 0,
+            "y": 4,
+            "width": 4,
+            "property_id": "property_ARVRChYBhSv3MO00",
+            "height": 4
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 4,
+            "property_id": "property_qghW4wlsOc2MGtw_",
+            "height": 4
+          },
+          {
+            "x": 4,
+            "y": 0,
+            "width": 4,
+            "property_id": "property_SD4Mk_-GImg500yH",
+            "height": 4
+          },
+          {
+            "x": 4,
+            "y": 4,
+            "width": 4,
+            "property_id": "property_Ol0HGMuXCmSMukFZ",
+            "height": 4
+          },
+          {
+            "x": 8,
+            "y": 13,
+            "width": 4,
+            "property_id": "property_d9jzGrnv9Rc5gQpv",
+            "height": 4
+          },
+          {
+            "x": 0,
+            "y": 8,
+            "width": 4,
+            "property_id": "property_8OqOM0vhS7U-1Myx",
+            "height": 4
+          },
+          {
+            "x": 4,
+            "y": 8,
+            "width": 4,
+            "property_id": "property_1w0qt26ggo_OTWmk",
+            "height": 4
+          },
+          {
+            "x": 8,
+            "y": 17,
+            "width": 4,
+            "property_id": "property_Yhq3KiiZQRR-WAbn",
+            "height": 4
+          },
+          {
+            "x": 0,
+            "y": 12,
+            "width": 4,
+            "property_id": "property_g9Lr_5dMuC4bGxC_",
+            "height": 4
+          },
+          {
+            "x": 4,
+            "y": 12,
+            "width": 4,
+            "property_id": "property_MHWOYHG0EYHmt5b-",
+            "height": 4
+          },
+          {
+            "x": 8,
+            "y": 21,
+            "width": 4,
+            "property_id": "property_VBiKOGjBwXWtWsYJ",
+            "height": 4
+          },
+          {
+            "x": 0,
+            "y": 16,
+            "width": 4,
+            "property_id": "property_O6E-jQXfcW1DBw1G",
+            "height": 4
+          }
+        ],
+        "num_pinned_properties": 0,
+        "property_options": [
+          {
+            "property_id": "property_T7A2GEq6G-XyZP3H",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_ARVRChYBhSv3MO00",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_qghW4wlsOc2MGtw_",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_SD4Mk_-GImg500yH",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_Ol0HGMuXCmSMukFZ",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_d9jzGrnv9Rc5gQpv",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_8OqOM0vhS7U-1Myx",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_1w0qt26ggo_OTWmk",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_Yhq3KiiZQRR-WAbn",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_g9Lr_5dMuC4bGxC_",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_MHWOYHG0EYHmt5b-",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_VBiKOGjBwXWtWsYJ",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_O6E-jQXfcW1DBw1G",
+            "block_workers_edits": false
+          }
+        ]
+      }
+    }
+  ],
+  "external_objects": {}
+}

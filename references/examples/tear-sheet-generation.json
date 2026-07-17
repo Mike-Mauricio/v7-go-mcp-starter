@@ -1,0 +1,2758 @@
+{
+  "projects": [
+    {
+      "id": "project_lXZHDfwJdBOJOoIE",
+      "name": "⭐️ Tear Sheet Generation",
+      "type": "regular",
+      "description": "Use this agent to generate tear sheets from quarterly reports",
+      "properties": [
+        {
+          "id": "property_JoWKXEHgdrbmH9cU",
+          "name": "Vintage Year",
+          "type": "text",
+          "description": "## Role\nYou are a **Private Equity Tear Sheet Analyst** specialized in converting GP quarterly reports, fund documents, and performance data into accurate, structured data for downstream reporting systems for **V7**.\n\n## Objective\nExtract or calculate the requested tear sheet field with precision and return output in a normalized, markdown format. Accuracy is critically important. Prioritize correctness.\n\n# Field to extract: Vintage Year\nExtract the vintage year (first close year) of the fund.\nReturn concise text exactly matching the source language when applicable.\n\n## Formatting Rules\n- Use `Not Found` when information is not located in the source documents.\n- Use `Not Applicable` only when the provision truly does not apply to this fund.\n- Normalize all dates to `YYYY-MM-DD` and all currencies to USD unless otherwise stated.\n- Express percentages as decimal percentages (e.g. 37.20%).\n- Express multiples with one or two decimal places followed by 'x' (e.g. 1.30x).\n- Do not guess or fabricate numbers.",
+          "tool": "gemini_2_5_flash",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_MCPsfQOOE7irogHJ",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_ODnW6tgR2dKatzin",
+          "name": "Strategy",
+          "type": "single_select",
+          "config": {
+            "options": [
+              {
+                "value": "Buyout",
+                "color": "rainbow-01",
+                "tool_fallback": false
+              },
+              {
+                "value": "Growth Equity",
+                "color": "rainbow-02",
+                "tool_fallback": false
+              },
+              {
+                "value": "Venture Capital",
+                "color": "rainbow-03",
+                "tool_fallback": false
+              },
+              {
+                "value": "Credit",
+                "color": "rainbow-04",
+                "tool_fallback": false
+              },
+              {
+                "value": "Real Assets",
+                "color": "rainbow-05",
+                "tool_fallback": false
+              },
+              {
+                "value": "Real Estate",
+                "color": "rainbow-06",
+                "tool_fallback": false
+              },
+              {
+                "value": "Infrastructure",
+                "color": "rainbow-07",
+                "tool_fallback": false
+              },
+              {
+                "value": "Secondaries",
+                "color": "rainbow-08",
+                "tool_fallback": false
+              },
+              {
+                "value": "Fund of Funds",
+                "color": "rainbow-09",
+                "tool_fallback": false
+              },
+              {
+                "value": "Co-Investment",
+                "color": "rainbow-10",
+                "tool_fallback": false
+              },
+              {
+                "value": "Distressed",
+                "color": "rainbow-11",
+                "tool_fallback": false
+              },
+              {
+                "value": "Mezzanine",
+                "color": "rainbow-12",
+                "tool_fallback": false
+              },
+              {
+                "value": "Other",
+                "color": "rainbow-13",
+                "tool_fallback": false
+              }
+            ],
+            "default_option": null
+          },
+          "description": "## Role\nYou are a **Private Equity Tear Sheet Analyst** specialized in converting GP quarterly reports, fund documents, and performance data into accurate, structured data for downstream reporting systems for **V7**.\n\n## Objective\nExtract or calculate the requested tear sheet field with precision and return output in a normalized, markdown format. Accuracy is critically important. Prioritize correctness.\n\n# Field to extract: Strategy\nClassify the primary investment strategy of the fund.\nReturn exactly one allowed option.\n\n## Formatting Rules\n- Use `Not Found` when information is not located in the source documents.\n- Use `Not Applicable` only when the provision truly does not apply to this fund.\n- Normalize all dates to `YYYY-MM-DD` and all currencies to USD unless otherwise stated.\n- Express percentages as decimal percentages (e.g. 37.20%).\n- Express multiples with one or two decimal places followed by 'x' (e.g. 1.30x).\n- Do not guess or fabricate numbers.",
+          "tool": "gemini_2_5_flash",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_MCPsfQOOE7irogHJ",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_BIFta3TkUpgKBPjH",
+          "name": "Fund Name",
+          "type": "text",
+          "description": "## Role\nYou are a **Private Equity Tear Sheet Analyst** specialized in converting GP quarterly reports, fund documents, and performance data into accurate, structured data for downstream reporting systems for **V7**.\n\n## Objective\nExtract or calculate the requested tear sheet field with precision and return output in a normalized, markdown format. Accuracy is critically important. Prioritize correctness.\n\n# Field to extract: Fund Name\nExtract the full legal name of the fund.\nReturn concise text exactly matching the source language when applicable.\n\n## Formatting Rules\n- Use `Not Found` when information is not located in the source documents.\n- Use `Not Applicable` only when the provision truly does not apply to this fund.\n- Normalize all dates to `YYYY-MM-DD` and all currencies to USD unless otherwise stated.\n- Express percentages as decimal percentages (e.g. 37.20%).\n- Express multiples with one or two decimal places followed by 'x' (e.g. 1.30x).\n- Do not guess or fabricate numbers.",
+          "tool": "gemini_2_5_flash",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_MCPsfQOOE7irogHJ",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_OhXAIyOzXCCqqnks",
+          "name": "Fund Manager",
+          "type": "text",
+          "description": "## Role\nYou are a **Private Equity Tear Sheet Analyst** specialized in converting GP quarterly reports, fund documents, and performance data into accurate, structured data for downstream reporting systems for **V7**.\n\n## Objective\nExtract or calculate the requested tear sheet field with precision and return output in a normalized, markdown format. Accuracy is critically important. Prioritize correctness.\n\n# Field to extract: Fund Manager\nExtract the name of the GP / fund manager.\nReturn concise text exactly matching the source language when applicable.\n\n## Formatting Rules\n- Use `Not Found` when information is not located in the source documents.\n- Use `Not Applicable` only when the provision truly does not apply to this fund.\n- Normalize all dates to `YYYY-MM-DD` and all currencies to USD unless otherwise stated.\n- Express percentages as decimal percentages (e.g. 37.20%).\n- Express multiples with one or two decimal places followed by 'x' (e.g. 1.30x).\n- Do not guess or fabricate numbers.",
+          "tool": "gemini_2_5_flash",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_MCPsfQOOE7irogHJ",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_K0Xzv1Llmx_Z4Cxb",
+          "name": "Fund Size",
+          "type": "json",
+          "description": "## Role\nYou are a **Private Equity Tear Sheet Analyst** specialized in converting GP quarterly reports, fund documents, and performance data into accurate, structured data for downstream reporting systems for **V7**.\n\n## Objective\nExtract or calculate the requested tear sheet field with precision and return output in a normalized, markdown format. Accuracy is critically important. Prioritize correctness.\n\n# Field to extract: Fund Size\nExtract total fund size (final close or target). Return in USD.\nReturn STRICT JSON object format only: {\"value\": x, \"unit\": y}. Use only the keys \"value\" and \"unit\" with no additional keys. Set x to a number when present; otherwise set x to \"None\". Set y to \"USD\" when known; otherwise set y to \"None\".- For missing numbers which are given as JSONs, return {\"value\": \"None\", \"unit\": \"None\"}.- For currency and numeric values, return numbers with two decimal places when applicable.\n\n## Formatting Rules\n- Use `Not Found` when information is not located in the source documents.\n- Use `Not Applicable` only when the provision truly does not apply to this fund.\n- Normalize all dates to `YYYY-MM-DD` and all currencies to USD unless otherwise stated.\n- Express percentages as decimal percentages (e.g. 37.20%).\n- Express multiples with one or two decimal places followed by 'x' (e.g. 1.30x).\n- Do not guess or fabricate numbers.",
+          "tool": "gemini_2_5_flash",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_MCPsfQOOE7irogHJ",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_6WFBrLV3W6AU15_I",
+          "name": "GP Commitment %",
+          "type": "text",
+          "description": "## Role\nYou are a **Private Equity Tear Sheet Analyst** specialized in converting GP quarterly reports, fund documents, and performance data into accurate, structured data for downstream reporting systems for **V7**.\n\n## Objective\nExtract or calculate the requested tear sheet field with precision and return output in a normalized, markdown format. Accuracy is critically important. Prioritize correctness.\n\n# Field to extract: GP Commitment %\nExtract the GP's commitment as a percentage of total fund size.\nReturn concise text exactly matching the source language when applicable.\n\n## Formatting Rules\n- Use `Not Found` when information is not located in the source documents.\n- Use `Not Applicable` only when the provision truly does not apply to this fund.\n- Normalize all dates to `YYYY-MM-DD` and all currencies to USD unless otherwise stated.\n- Express percentages as decimal percentages (e.g. 37.20%).\n- Express multiples with one or two decimal places followed by 'x' (e.g. 1.30x).\n- Do not guess or fabricate numbers.",
+          "tool": "gemini_2_5_flash",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_MCPsfQOOE7irogHJ",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_raSQTqUyNwWBumN8",
+          "name": "Fund Stage",
+          "type": "single_select",
+          "config": {
+            "options": [
+              {
+                "value": "Fundraising",
+                "color": "rainbow-01",
+                "tool_fallback": false
+              },
+              {
+                "value": "Investment Period",
+                "color": "rainbow-02",
+                "tool_fallback": false
+              },
+              {
+                "value": "Harvesting",
+                "color": "rainbow-03",
+                "tool_fallback": false
+              },
+              {
+                "value": "Fully Realized",
+                "color": "rainbow-04",
+                "tool_fallback": false
+              },
+              {
+                "value": "Extension",
+                "color": "rainbow-05",
+                "tool_fallback": false
+              }
+            ],
+            "default_option": null
+          },
+          "description": "## Role\nYou are a **Private Equity Tear Sheet Analyst** specialized in converting GP quarterly reports, fund documents, and performance data into accurate, structured data for downstream reporting systems for **V7**.\n\n## Objective\nExtract or calculate the requested tear sheet field with precision and return output in a normalized, markdown format. Accuracy is critically important. Prioritize correctness.\n\n# Field to extract: Fund Stage\nClassify the current stage of the fund lifecycle.\nReturn exactly one allowed option.\n\n## Formatting Rules\n- Use `Not Found` when information is not located in the source documents.\n- Use `Not Applicable` only when the provision truly does not apply to this fund.\n- Normalize all dates to `YYYY-MM-DD` and all currencies to USD unless otherwise stated.\n- Express percentages as decimal percentages (e.g. 37.20%).\n- Express multiples with one or two decimal places followed by 'x' (e.g. 1.30x).\n- Do not guess or fabricate numbers.",
+          "tool": "gemini_2_5_flash",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_MCPsfQOOE7irogHJ",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_EpA9Z35VegoNsHja",
+          "name": "Sub-Strategy",
+          "type": "single_select",
+          "config": {
+            "options": [
+              {
+                "value": "Large Cap Buyout",
+                "color": "rainbow-01",
+                "tool_fallback": false
+              },
+              {
+                "value": "Upper Mid-Market Buyout",
+                "color": "rainbow-02",
+                "tool_fallback": false
+              },
+              {
+                "value": "Mid-Market Buyout",
+                "color": "rainbow-03",
+                "tool_fallback": false
+              },
+              {
+                "value": "Lower Mid-Market Buyout",
+                "color": "rainbow-04",
+                "tool_fallback": false
+              },
+              {
+                "value": "Small Cap Buyout",
+                "color": "rainbow-05",
+                "tool_fallback": false
+              },
+              {
+                "value": "Late Stage Growth",
+                "color": "rainbow-06",
+                "tool_fallback": false
+              },
+              {
+                "value": "Early Stage Growth",
+                "color": "rainbow-07",
+                "tool_fallback": false
+              },
+              {
+                "value": "Early Stage VC",
+                "color": "rainbow-08",
+                "tool_fallback": false
+              },
+              {
+                "value": "Late Stage VC",
+                "color": "rainbow-09",
+                "tool_fallback": false
+              },
+              {
+                "value": "Multi-Stage VC",
+                "color": "rainbow-10",
+                "tool_fallback": false
+              },
+              {
+                "value": "Senior Direct Lending",
+                "color": "rainbow-11",
+                "tool_fallback": false
+              },
+              {
+                "value": "Mezzanine",
+                "color": "rainbow-12",
+                "tool_fallback": false
+              },
+              {
+                "value": "Opportunistic Credit",
+                "color": "rainbow-13",
+                "tool_fallback": false
+              },
+              {
+                "value": "Core",
+                "color": "rainbow-01",
+                "tool_fallback": false
+              },
+              {
+                "value": "Core-Plus",
+                "color": "rainbow-02",
+                "tool_fallback": false
+              },
+              {
+                "value": "Value-Add",
+                "color": "rainbow-03",
+                "tool_fallback": false
+              },
+              {
+                "value": "Opportunistic",
+                "color": "rainbow-04",
+                "tool_fallback": false
+              },
+              {
+                "value": "Other",
+                "color": "rainbow-05",
+                "tool_fallback": false
+              }
+            ],
+            "default_option": null
+          },
+          "description": "## Role\nYou are a **Private Equity Tear Sheet Analyst** specialized in converting GP quarterly reports, fund documents, and performance data into accurate, structured data for downstream reporting systems for **V7**.\n\n## Objective\nExtract or calculate the requested tear sheet field with precision and return output in a normalized, markdown format. Accuracy is critically important. Prioritize correctness.\n\n# Field to extract: Sub-Strategy\nClassify the sub-strategy. Infer from fund size, deal parameters, and stated strategy.\nReturn exactly one allowed option.\n\n## Formatting Rules\n- Use `Not Found` when information is not located in the source documents.\n- Use `Not Applicable` only when the provision truly does not apply to this fund.\n- Normalize all dates to `YYYY-MM-DD` and all currencies to USD unless otherwise stated.\n- Express percentages as decimal percentages (e.g. 37.20%).\n- Express multiples with one or two decimal places followed by 'x' (e.g. 1.30x).\n- Do not guess or fabricate numbers.",
+          "tool": "gemini_2_5_flash",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_MCPsfQOOE7irogHJ",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_o8SRdNlQ21zGNLOD",
+          "name": "LP % Ownership",
+          "type": "text",
+          "description": "## Role\nYou are a **Private Equity Tear Sheet Analyst** specialized in converting GP quarterly reports, fund documents, and performance data into accurate, structured data for downstream reporting systems for **V7**.\n\n## Objective\nExtract or calculate the requested tear sheet field with precision and return output in a normalized, markdown format. Accuracy is critically important. Prioritize correctness.\n\n# Field to extract: LP % Ownership\nExtract or calculate Tilad's percentage ownership of the fund (LP Commitment / Fund Size).\nReturn concise text exactly matching the source language when applicable.\n\n## Formatting Rules\n- Use `Not Found` when information is not located in the source documents.\n- Use `Not Applicable` only when the provision truly does not apply to this fund.\n- Normalize all dates to `YYYY-MM-DD` and all currencies to USD unless otherwise stated.\n- Express percentages as decimal percentages (e.g. 37.20%).\n- Express multiples with one or two decimal places followed by 'x' (e.g. 1.30x).\n- Do not guess or fabricate numbers.",
+          "tool": "gemini_2_5_flash",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_MCPsfQOOE7irogHJ",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_6xq_vyKjLB-sQig8",
+          "name": "Geography",
+          "type": "single_select",
+          "config": {
+            "options": [
+              {
+                "value": "US",
+                "color": "rainbow-01",
+                "tool_fallback": false
+              },
+              {
+                "value": "North America",
+                "color": "rainbow-02",
+                "tool_fallback": false
+              },
+              {
+                "value": "Europe",
+                "color": "rainbow-03",
+                "tool_fallback": false
+              },
+              {
+                "value": "Asia-Pacific",
+                "color": "rainbow-04",
+                "tool_fallback": false
+              },
+              {
+                "value": "Global",
+                "color": "rainbow-05",
+                "tool_fallback": false
+              },
+              {
+                "value": "Emerging Markets",
+                "color": "rainbow-06",
+                "tool_fallback": false
+              },
+              {
+                "value": "Latin America",
+                "color": "rainbow-07",
+                "tool_fallback": false
+              },
+              {
+                "value": "Middle East & Africa",
+                "color": "rainbow-08",
+                "tool_fallback": false
+              },
+              {
+                "value": "Other",
+                "color": "rainbow-09",
+                "tool_fallback": false
+              }
+            ],
+            "default_option": null
+          },
+          "description": "## Role\nYou are a **Private Equity Tear Sheet Analyst** specialized in converting GP quarterly reports, fund documents, and performance data into accurate, structured data for downstream reporting systems for **V7**.\n\n## Objective\nExtract or calculate the requested tear sheet field with precision and return output in a normalized, markdown format. Accuracy is critically important. Prioritize correctness.\n\n# Field to extract: Geography\nClassify the primary geographic focus of the fund.\nReturn exactly one allowed option.\n\n## Formatting Rules\n- Use `Not Found` when information is not located in the source documents.\n- Use `Not Applicable` only when the provision truly does not apply to this fund.\n- Normalize all dates to `YYYY-MM-DD` and all currencies to USD unless otherwise stated.\n- Express percentages as decimal percentages (e.g. 37.20%).\n- Express multiples with one or two decimal places followed by 'x' (e.g. 1.30x).\n- Do not guess or fabricate numbers.",
+          "tool": "gemini_2_5_flash",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_MCPsfQOOE7irogHJ",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_luGVuiF8RFfe4O9K",
+          "name": "Fund Strategy Description",
+          "type": "text",
+          "description": "## Role\nYou are a **Private Equity Tear Sheet Analyst** specialized in converting GP quarterly reports, fund documents, and performance data into accurate, structured data for downstream reporting systems for **V7**.\n\n## Objective\nExtract or calculate the requested tear sheet field with precision and return output in a normalized, markdown format. Accuracy is critically important. Prioritize correctness.\n\n# Field to extract: Fund Strategy Description\nExtract or compose a concise 2-4 sentence description of the fund's investment strategy, including target deal types, sectors, typical equity check size, number of target investments, target company enterprise value range, and target return profile (gross IRR and MOIC).\nReturn concise text exactly matching the source language when applicable.\n\n## Formatting Rules\n- Use `Not Found` when information is not located in the source documents.\n- Use `Not Applicable` only when the provision truly does not apply to this fund.\n- Normalize all dates to `YYYY-MM-DD` and all currencies to USD unless otherwise stated.\n- Express percentages as decimal percentages (e.g. 37.20%).\n- Express multiples with one or two decimal places followed by 'x' (e.g. 1.30x).\n- Do not guess or fabricate numbers.",
+          "tool": "gemini_2_5_flash",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_MCPsfQOOE7irogHJ",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_0uqPg6-_4mYxLp8d",
+          "name": "LP % Funded",
+          "type": "text",
+          "description": "## Role\nYou are a **Private Equity Tear Sheet Analyst** specialized in converting GP quarterly reports, fund documents, and performance data into accurate, structured data for downstream reporting systems for **V7**.\n\n## Objective\nExtract or calculate the requested tear sheet field with precision and return output in a normalized, markdown format. Accuracy is critically important. Prioritize correctness.\n\n# Field to extract: LP % Funded\nExtract or calculate the percentage of Tilad's commitment that has been called (Contributed / LP Commitment).\nReturn concise text exactly matching the source language when applicable.\n\n## Formatting Rules\n- Use `Not Found` when information is not located in the source documents.\n- Use `Not Applicable` only when the provision truly does not apply to this fund.\n- Normalize all dates to `YYYY-MM-DD` and all currencies to USD unless otherwise stated.\n- Express percentages as decimal percentages (e.g. 37.20%).\n- Express multiples with one or two decimal places followed by 'x' (e.g. 1.30x).\n- Do not guess or fabricate numbers.",
+          "tool": "gpt_5_1",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_MCPsfQOOE7irogHJ",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_HCytBPwtULeS7-aO",
+          "name": "Most Recent Report",
+          "type": "text",
+          "description": "What is the most recent quarterly report in the input file bundle?\n\nRespond in format “YYYY-QX”",
+          "tool": "gemini_2_5_flash",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_MCPsfQOOE7irogHJ",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_jDsX-pytZ9cfDo1F",
+          "name": "Input File Bundle",
+          "type": "collection",
+          "config": {
+            "properties": [],
+            "subproject_config": {
+              "properties": [
+                {
+                  "id": "property_MCPsfQOOE7irogHJ",
+                  "name": "File",
+                  "type": "file",
+                  "description": null,
+                  "tool": "manual",
+                  "inputs": [],
+                  "tool_config": {
+                    "input_mode": "primary_and_extracted"
+                  },
+                  "enabled_skills": [],
+                  "is_grounded": false,
+                  "skip_behaviour": "never",
+                  "incomplete_collection_input_rows_behaviour": "never",
+                  "visible_in_entity_sidebar": true
+                },
+                {
+                  "id": "property_xmX18OsoRnD0VEVf",
+                  "name": "Industry Exposure",
+                  "type": "json",
+                  "description": "## Role\nYou are a **Private Equity Tear Sheet Analyst** specialized in converting GP quarterly reports, fund documents, and performance data into accurate, structured data for downstream reporting systems for **V7**.\n\n## Objective\nExtract or calculate the requested tear sheet field with precision and return output in a normalized, markdown format. Accuracy is critically important. Prioritize correctness.\n\n# Field to extract: Industry Exposure\nExtract portfolio exposure by industry/sector as a breakdown by current market value.\n\nRequired output format:\n{\"metadata\": \"pie_chart\", \"chart_data\": [\n  {\"label\": \"Financials\", \"value\": 32.5},\n  {\"label\": \"Healthcare\", \"value\": 18.0},\n  ...\n]}\n\nRules:\n- Each entry has a 'label' (sector name) and 'value' (percentage of portfolio).\n- Values should sum to approximately 100.\n- Include all sectors represented in the portfolio.\n- Return ONLY the JSON object, no surrounding text.\n\n\n## Formatting Rules\n- Use `Not Found` when information is not located in the source documents.\n- Use `Not Applicable` only when the provision truly does not apply to this fund.\n- Normalize all dates to `YYYY-MM-DD` and all currencies to USD unless otherwise stated.\n- Express percentages as decimal percentages (e.g. 37.20%).\n- Express multiples with one or two decimal places followed by 'x' (e.g. 1.30x).\n- Do not guess or fabricate numbers.",
+                  "tool": "gemini_2_5_flash",
+                  "inputs": [
+                    {
+                      "target": "value",
+                      "entity_id": null,
+                      "property_id": "property_MCPsfQOOE7irogHJ",
+                      "via_property_id": null,
+                      "entities_filter": null
+                    }
+                  ],
+                  "tool_config": {
+                    "llm_config": {
+                      "stream_progress_updates": false,
+                      "thinking_effort": "low"
+                    },
+                    "input_mode": "primary_and_extracted"
+                  },
+                  "enabled_skills": [],
+                  "is_grounded": true,
+                  "skip_behaviour": "never",
+                  "incomplete_collection_input_rows_behaviour": "never",
+                  "visible_in_entity_sidebar": true
+                },
+                {
+                  "id": "property_a-RwbLGym7dJP3ad",
+                  "name": "Portfolio Snapshot",
+                  "type": "text",
+                  "description": "## Role\nYou are a **Private Equity Tear Sheet Analyst** specialized in converting GP quarterly reports, fund documents, and performance data into accurate, structured data for downstream reporting systems for **V7**.\n\n## Objective\nExtract or calculate the requested tear sheet field with precision and return output in a normalized, markdown format. Accuracy is critically important. Prioritize correctness.\n\n# Field to extract: Portfolio Snapshot\nExtract the underlying portfolio company details and return as a markdown table with columns: Company, Sector, Holding Period, Cost ($MM), Unrealized Value ($MM), Residual Dollar Gain ($MM), TVPI, % of Fund RVPI. List the top holdings individually and aggregate the rest as 'Rest of the Portfolio (N positions)'. Sort by unrealized value descending.\nReturn concise text exactly matching the source language when applicable.\n\n## Formatting Rules\n- Use `Not Found` when information is not located in the source documents.\n- Use `Not Applicable` only when the provision truly does not apply to this fund.\n- Normalize all dates to `YYYY-MM-DD` and all currencies to USD unless otherwise stated.\n- Express percentages as decimal percentages (e.g. 37.20%).\n- Express multiples with one or two decimal places followed by 'x' (e.g. 1.30x).\n- Do not guess or fabricate numbers.",
+                  "tool": "gemini_2_5_flash",
+                  "inputs": [
+                    {
+                      "target": "value",
+                      "entity_id": null,
+                      "property_id": "property_MCPsfQOOE7irogHJ",
+                      "via_property_id": null,
+                      "entities_filter": null
+                    }
+                  ],
+                  "tool_config": {
+                    "llm_config": {
+                      "stream_progress_updates": false,
+                      "thinking_effort": "low"
+                    },
+                    "input_mode": "primary_and_extracted"
+                  },
+                  "enabled_skills": [],
+                  "is_grounded": true,
+                  "skip_behaviour": "never",
+                  "incomplete_collection_input_rows_behaviour": "never",
+                  "visible_in_entity_sidebar": true
+                },
+                {
+                  "id": "property_NxYc4YtvfyWQss9T",
+                  "name": "Follow-on Investments",
+                  "type": "text",
+                  "description": "## Role\nYou are a **Private Equity Tear Sheet Analyst** specialized in converting GP quarterly reports, fund documents, and performance data into accurate, structured data for downstream reporting systems for **V7**.\n\n## Objective\nExtract or calculate the requested tear sheet field with precision and return output in a normalized, markdown format. Accuracy is critically important. Prioritize correctness.\n\n# Field to extract: Follow-on Investments\nExtract all follow-on investments completed during the quarter. For each, include: company name and a brief transaction description. If none, return 'No follow-on investments during the quarter.'\nReturn concise text exactly matching the source language when applicable.\n\n## Formatting Rules\n- Use `Not Found` when information is not located in the source documents.\n- Use `Not Applicable` only when the provision truly does not apply to this fund.\n- Normalize all dates to `YYYY-MM-DD` and all currencies to USD unless otherwise stated.\n- Express percentages as decimal percentages (e.g. 37.20%).\n- Express multiples with one or two decimal places followed by 'x' (e.g. 1.30x).\n- Do not guess or fabricate numbers.",
+                  "tool": "gemini_2_5_flash",
+                  "inputs": [
+                    {
+                      "target": "value",
+                      "entity_id": null,
+                      "property_id": "property_MCPsfQOOE7irogHJ",
+                      "via_property_id": null,
+                      "entities_filter": null
+                    }
+                  ],
+                  "tool_config": {
+                    "llm_config": {
+                      "stream_progress_updates": false,
+                      "thinking_effort": "low"
+                    },
+                    "input_mode": "primary_and_extracted"
+                  },
+                  "enabled_skills": [],
+                  "is_grounded": true,
+                  "skip_behaviour": "never",
+                  "incomplete_collection_input_rows_behaviour": "never",
+                  "visible_in_entity_sidebar": true
+                },
+                {
+                  "id": "property_zKkT-uc-u8U1xc4h",
+                  "name": "Reporting Period",
+                  "type": "text",
+                  "description": "What is the reporting period for the quarterly report?\n\nReturn in format “YYYY-QX”",
+                  "tool": "gemini_2_5_flash",
+                  "inputs": [
+                    {
+                      "target": "value",
+                      "entity_id": null,
+                      "property_id": "property_MCPsfQOOE7irogHJ",
+                      "via_property_id": null,
+                      "entities_filter": null
+                    }
+                  ],
+                  "tool_config": {
+                    "llm_config": {
+                      "stream_progress_updates": false,
+                      "thinking_effort": "low"
+                    },
+                    "input_mode": "primary_and_extracted"
+                  },
+                  "enabled_skills": [],
+                  "is_grounded": true,
+                  "skip_behaviour": "never",
+                  "incomplete_collection_input_rows_behaviour": "never",
+                  "visible_in_entity_sidebar": true
+                },
+                {
+                  "id": "property_LtmeU8aTCBEreQ35",
+                  "name": "Sections",
+                  "type": "multi_select",
+                  "config": {
+                    "options": [
+                      {
+                        "value": "A. Fund Overview & Performance",
+                        "color": "rainbow-01",
+                        "tool_fallback": false
+                      },
+                      {
+                        "value": "B. Portfolio & Activity",
+                        "color": "rainbow-02",
+                        "tool_fallback": false
+                      }
+                    ],
+                    "default_option": null,
+                    "max_selected": 0
+                  },
+                  "description": "result = [\"A. Fund Overview & Performance\", \"B. Portfolio & Activity\"]",
+                  "tool": "code",
+                  "inputs": [
+                    {
+                      "target": "value",
+                      "entity_id": null,
+                      "property_id": "property_zKkT-uc-u8U1xc4h",
+                      "via_property_id": null,
+                      "entities_filter": null
+                    }
+                  ],
+                  "tool_config": {
+                    "input_mode": "primary_and_extracted",
+                    "code_config": {
+                      "dependencies": [],
+                      "unsafe_allow_network": false
+                    }
+                  },
+                  "enabled_skills": [],
+                  "is_grounded": false,
+                  "skip_behaviour": "never",
+                  "incomplete_collection_input_rows_behaviour": "never",
+                  "visible_in_entity_sidebar": true
+                },
+                {
+                  "id": "property_HhnV2yzgrUrK4ZyP",
+                  "name": "Is most recent report?",
+                  "type": "single_select",
+                  "config": {
+                    "options": [
+                      {
+                        "value": "Yes",
+                        "color": "rainbow-06",
+                        "tool_fallback": false
+                      },
+                      {
+                        "value": "No",
+                        "color": "rainbow-01",
+                        "tool_fallback": false
+                      }
+                    ],
+                    "default_option": null
+                  },
+                  "description": "Is this the most recent report?",
+                  "tool": "gpt_5_1",
+                  "inputs": [
+                    {
+                      "target": "value",
+                      "entity_id": null,
+                      "property_id": "property_HCytBPwtULeS7-aO",
+                      "via_property_id": null,
+                      "entities_filter": null
+                    },
+                    {
+                      "target": "value",
+                      "entity_id": null,
+                      "property_id": "property_zKkT-uc-u8U1xc4h",
+                      "via_property_id": null,
+                      "entities_filter": null
+                    }
+                  ],
+                  "tool_config": {
+                    "llm_config": {
+                      "stream_progress_updates": false,
+                      "thinking_effort": "disabled"
+                    },
+                    "input_mode": "primary_and_extracted"
+                  },
+                  "enabled_skills": [],
+                  "is_grounded": false,
+                  "skip_behaviour": "never",
+                  "incomplete_collection_input_rows_behaviour": "never",
+                  "visible_in_entity_sidebar": true
+                },
+                {
+                  "id": "property_tBj3R7PpSxsUSyFM",
+                  "name": "Realizations",
+                  "type": "text",
+                  "description": "## Role\nYou are a **Private Equity Tear Sheet Analyst** specialized in converting GP quarterly reports, fund documents, and performance data into accurate, structured data for downstream reporting systems for **V7**.\n\n## Objective\nExtract or calculate the requested tear sheet field with precision and return output in a normalized, markdown format. Accuracy is critically important. Prioritize correctness.\n\n# Field to extract: Realizations\nExtract all full or partial realizations completed during the quarter and any subsequent-to-quarter-end announced exits. For each, include: company name, buyer (if applicable), and outcome metrics (gross MOIC / IRR if available). If none, return 'No realizations during the quarter.'\nReturn concise text exactly matching the source language when applicable.\n\n## Formatting Rules\n- Use `Not Found` when information is not located in the source documents.\n- Use `Not Applicable` only when the provision truly does not apply to this fund.\n- Normalize all dates to `YYYY-MM-DD` and all currencies to USD unless otherwise stated.\n- Express percentages as decimal percentages (e.g. 37.20%).\n- Express multiples with one or two decimal places followed by 'x' (e.g. 1.30x).\n- Do not guess or fabricate numbers.",
+                  "tool": "gemini_2_5_flash",
+                  "inputs": [
+                    {
+                      "target": "value",
+                      "entity_id": null,
+                      "property_id": "property_MCPsfQOOE7irogHJ",
+                      "via_property_id": null,
+                      "entities_filter": null
+                    }
+                  ],
+                  "tool_config": {
+                    "llm_config": {
+                      "stream_progress_updates": false,
+                      "thinking_effort": "low"
+                    },
+                    "input_mode": "primary_and_extracted"
+                  },
+                  "enabled_skills": [],
+                  "is_grounded": true,
+                  "skip_behaviour": "never",
+                  "incomplete_collection_input_rows_behaviour": "never",
+                  "visible_in_entity_sidebar": true
+                },
+                {
+                  "id": "property_BuiMYBaYrFh_7qjC",
+                  "name": "Other Comments",
+                  "type": "text",
+                  "description": "## Role\nYou are a **Private Equity Tear Sheet Analyst** specialized in converting GP quarterly reports, fund documents, and performance data into accurate, structured data for downstream reporting systems for **V7**.\n\n## Objective\nExtract or calculate the requested tear sheet field with precision and return output in a normalized, markdown format. Accuracy is critically important. Prioritize correctness.\n\n# Field to extract: Other Comments\nExtract additional commentary including: total fund deployment status (amount invested, number of investments, aggregate gross MOIC), material valuation uplifts (company name + MOIC change), and material valuation detractions (company name + MOIC change). Format with clear sub-sections.\nReturn concise text exactly matching the source language when applicable.\n\n## Formatting Rules\n- Use `Not Found` when information is not located in the source documents.\n- Use `Not Applicable` only when the provision truly does not apply to this fund.\n- Normalize all dates to `YYYY-MM-DD` and all currencies to USD unless otherwise stated.\n- Express percentages as decimal percentages (e.g. 37.20%).\n- Express multiples with one or two decimal places followed by 'x' (e.g. 1.30x).\n- Do not guess or fabricate numbers.",
+                  "tool": "gemini_2_5_flash",
+                  "inputs": [
+                    {
+                      "target": "value",
+                      "entity_id": null,
+                      "property_id": "property_MCPsfQOOE7irogHJ",
+                      "via_property_id": null,
+                      "entities_filter": null
+                    }
+                  ],
+                  "tool_config": {
+                    "llm_config": {
+                      "stream_progress_updates": false,
+                      "thinking_effort": "low"
+                    },
+                    "input_mode": "primary_and_extracted"
+                  },
+                  "enabled_skills": [],
+                  "is_grounded": true,
+                  "skip_behaviour": "never",
+                  "incomplete_collection_input_rows_behaviour": "never",
+                  "visible_in_entity_sidebar": true
+                },
+                {
+                  "id": "property_K3FuJOcyn82PnhMm",
+                  "name": "Key Statistics",
+                  "type": "json",
+                  "description": "## Role\nYou are a **Private Equity Tear Sheet Analyst** specialized in converting GP quarterly reports, fund documents, and performance data into accurate, structured data for downstream reporting systems for **V7**.\n\n## Objective\nExtract or calculate the requested tear sheet field with precision and return output in a normalized, markdown format. Accuracy is critically important. Prioritize correctness.\n\n# Field to extract: Key Statistics\nExtract ALL of the following metrics for Tilad as of the most recent quarterly reporting date and return as a single JSON object.\n\nRequired output format:\n{\n  \"reporting_date\": \"YYYY-MM-DD\",\n  \"commitment\": 10000000,\n  \"contributed\": 3961030,\n  \"distributed\": 392193,\n  \"nav\": 4758751,\n  \"total_value\": 5150944,\n  \"unfunded\": 6038970,\n  \"irr\": 36.61,\n  \"dpi\": 0.10,\n  \"rvpi\": 1.20,\n  \"tvpi\": 1.30\n}\n\nRules:\n- All currency values in USD as raw numbers (no formatting, no dollar signs).\n- IRR as a percentage number (e.g. 36.61 not 0.3661).\n- DPI, RVPI, TVPI as decimal multiples (e.g. 1.30 not '1.30x').\n- total_value = nav + distributed. unfunded = commitment - contributed. Calculate if not explicitly stated.\n- Use null for any metric not found in the source documents.\n- Return ONLY the JSON object, no surrounding text.\n\n\n## Formatting Rules\n- Use `Not Found` when information is not located in the source documents.\n- Use `Not Applicable` only when the provision truly does not apply to this fund.\n- Normalize all dates to `YYYY-MM-DD` and all currencies to USD unless otherwise stated.\n- Express percentages as decimal percentages (e.g. 37.20%).\n- Express multiples with one or two decimal places followed by 'x' (e.g. 1.30x).\n- Do not guess or fabricate numbers.",
+                  "tool": "gemini_2_5_flash",
+                  "inputs": [
+                    {
+                      "target": "value",
+                      "entity_id": null,
+                      "property_id": "property_MCPsfQOOE7irogHJ",
+                      "via_property_id": null,
+                      "entities_filter": null
+                    }
+                  ],
+                  "tool_config": {
+                    "llm_config": {
+                      "stream_progress_updates": false,
+                      "thinking_effort": "low"
+                    },
+                    "input_mode": "primary_and_extracted"
+                  },
+                  "enabled_skills": [],
+                  "is_grounded": true,
+                  "skip_behaviour": "never",
+                  "incomplete_collection_input_rows_behaviour": "never",
+                  "visible_in_entity_sidebar": true
+                },
+                {
+                  "id": "property_KJWajmg9_7kKIq98",
+                  "name": "Public Market Exposure",
+                  "type": "json",
+                  "description": "## Role\nYou are a **Private Equity Tear Sheet Analyst** specialized in converting GP quarterly reports, fund documents, and performance data into accurate, structured data for downstream reporting systems for **V7**.\n\n## Objective\nExtract or calculate the requested tear sheet field with precision and return output in a normalized, markdown format. Accuracy is critically important. Prioritize correctness.\n\n# Field to extract: Public Market Exposure\nExtract the percentage of the portfolio that is publicly listed vs privately held.\n\nRequired output format:\n{\"metadata\": \"pie_chart\", \"chart_data\": [\n  {\"label\": \"Private\", \"value\": 95.0},\n  {\"label\": \"Public\", \"value\": 5.0}\n]}\n\nRules:\n- Each entry has a 'label' (Public or Private) and 'value' (percentage of portfolio).\n- Values should sum to 100.\n- Return ONLY the JSON object, no surrounding text.\n\n\n## Formatting Rules\n- Use `Not Found` when information is not located in the source documents.\n- Use `Not Applicable` only when the provision truly does not apply to this fund.\n- Normalize all dates to `YYYY-MM-DD` and all currencies to USD unless otherwise stated.\n- Express percentages as decimal percentages (e.g. 37.20%).\n- Express multiples with one or two decimal places followed by 'x' (e.g. 1.30x).\n- Do not guess or fabricate numbers.",
+                  "tool": "gemini_2_5_flash",
+                  "inputs": [
+                    {
+                      "target": "value",
+                      "entity_id": null,
+                      "property_id": "property_MCPsfQOOE7irogHJ",
+                      "via_property_id": null,
+                      "entities_filter": null
+                    }
+                  ],
+                  "tool_config": {
+                    "llm_config": {
+                      "stream_progress_updates": false,
+                      "thinking_effort": "low"
+                    },
+                    "input_mode": "primary_and_extracted"
+                  },
+                  "enabled_skills": [],
+                  "is_grounded": true,
+                  "skip_behaviour": "never",
+                  "incomplete_collection_input_rows_behaviour": "never",
+                  "visible_in_entity_sidebar": true
+                },
+                {
+                  "id": "property_HKyvQK48SwX9lBWl",
+                  "name": "Geographic Exposure",
+                  "type": "json",
+                  "description": "## Role\nYou are a **Private Equity Tear Sheet Analyst** specialized in converting GP quarterly reports, fund documents, and performance data into accurate, structured data for downstream reporting systems for **V7**.\n\n## Objective\nExtract or calculate the requested tear sheet field with precision and return output in a normalized, markdown format. Accuracy is critically important. Prioritize correctness.\n\n# Field to extract: Geographic Exposure\nExtract portfolio exposure by geography as a breakdown by current market value.\n\nRequired output format:\n{\"metadata\": \"pie_chart\", \"chart_data\": [\n  {\"label\": \"United States\", \"value\": 65.0},\n  {\"label\": \"Europe\", \"value\": 20.0},\n  ...\n]}\n\nRules:\n- Each entry has a 'label' (region or country) and 'value' (percentage of portfolio).\n- Values should sum to approximately 100.\n- Return ONLY the JSON object, no surrounding text.\n\n\n## Formatting Rules\n- Use `Not Found` when information is not located in the source documents.\n- Use `Not Applicable` only when the provision truly does not apply to this fund.\n- Normalize all dates to `YYYY-MM-DD` and all currencies to USD unless otherwise stated.\n- Express percentages as decimal percentages (e.g. 37.20%).\n- Express multiples with one or two decimal places followed by 'x' (e.g. 1.30x).\n- Do not guess or fabricate numbers.",
+                  "tool": "gemini_2_5_flash",
+                  "inputs": [
+                    {
+                      "target": "value",
+                      "entity_id": null,
+                      "property_id": "property_MCPsfQOOE7irogHJ",
+                      "via_property_id": null,
+                      "entities_filter": null
+                    }
+                  ],
+                  "tool_config": {
+                    "llm_config": {
+                      "stream_progress_updates": false,
+                      "thinking_effort": "low"
+                    },
+                    "input_mode": "primary_and_extracted"
+                  },
+                  "enabled_skills": [],
+                  "is_grounded": true,
+                  "skip_behaviour": "never",
+                  "incomplete_collection_input_rows_behaviour": "never",
+                  "visible_in_entity_sidebar": true
+                },
+                {
+                  "id": "property_aG8v9txOLakOFqq3",
+                  "name": "New Investments",
+                  "type": "text",
+                  "description": "## Role\nYou are a **Private Equity Tear Sheet Analyst** specialized in converting GP quarterly reports, fund documents, and performance data into accurate, structured data for downstream reporting systems for **V7**.\n\n## Objective\nExtract or calculate the requested tear sheet field with precision and return output in a normalized, markdown format. Accuracy is critically important. Prioritize correctness.\n\n# Field to extract: New Investments\nExtract all new platform investments completed during the quarter. For each, include: company name, deal size, and a brief company description. If none, return 'No new investments during the quarter.'\nReturn concise text exactly matching the source language when applicable.\n\n## Formatting Rules\n- Use `Not Found` when information is not located in the source documents.\n- Use `Not Applicable` only when the provision truly does not apply to this fund.\n- Normalize all dates to `YYYY-MM-DD` and all currencies to USD unless otherwise stated.\n- Express percentages as decimal percentages (e.g. 37.20%).\n- Express multiples with one or two decimal places followed by 'x' (e.g. 1.30x).\n- Do not guess or fabricate numbers.",
+                  "tool": "gemini_2_5_flash",
+                  "inputs": [
+                    {
+                      "target": "value",
+                      "entity_id": null,
+                      "property_id": "property_MCPsfQOOE7irogHJ",
+                      "via_property_id": null,
+                      "entities_filter": null
+                    }
+                  ],
+                  "tool_config": {
+                    "llm_config": {
+                      "stream_progress_updates": false,
+                      "thinking_effort": "low"
+                    },
+                    "input_mode": "primary_and_extracted"
+                  },
+                  "enabled_skills": [],
+                  "is_grounded": true,
+                  "skip_behaviour": "never",
+                  "incomplete_collection_input_rows_behaviour": "never",
+                  "visible_in_entity_sidebar": true
+                }
+              ],
+              "views": [
+                {
+                  "id": "view_5j0SOV24WbvMf1Bo",
+                  "name": "A. Fund Overview & Performance",
+                  "filters": [
+                    {
+                      "property_id": "property_LtmeU8aTCBEreQ35",
+                      "select_option_value": "A. Fund Overview & Performance"
+                    }
+                  ],
+                  "property_ids": [
+                    "property_K3FuJOcyn82PnhMm",
+                    "property_xmX18OsoRnD0VEVf",
+                    "property_HKyvQK48SwX9lBWl",
+                    "property_KJWajmg9_7kKIq98"
+                  ],
+                  "property_layouts": [
+                    {
+                      "x": 0,
+                      "y": 13,
+                      "width": 1,
+                      "property_id": "property_K3FuJOcyn82PnhMm",
+                      "height": 1
+                    },
+                    {
+                      "x": 0,
+                      "y": 14,
+                      "width": 1,
+                      "property_id": "property_xmX18OsoRnD0VEVf",
+                      "height": 1
+                    },
+                    {
+                      "x": 0,
+                      "y": 15,
+                      "width": 1,
+                      "property_id": "property_HKyvQK48SwX9lBWl",
+                      "height": 1
+                    },
+                    {
+                      "x": 0,
+                      "y": 16,
+                      "width": 1,
+                      "property_id": "property_KJWajmg9_7kKIq98",
+                      "height": 1
+                    }
+                  ],
+                  "num_pinned_properties": 0,
+                  "property_options": [
+                    {
+                      "property_id": "property_xmX18OsoRnD0VEVf",
+                      "block_workers_edits": false
+                    },
+                    {
+                      "property_id": "property_K3FuJOcyn82PnhMm",
+                      "block_workers_edits": false
+                    },
+                    {
+                      "property_id": "property_KJWajmg9_7kKIq98",
+                      "block_workers_edits": false
+                    },
+                    {
+                      "property_id": "property_HKyvQK48SwX9lBWl",
+                      "block_workers_edits": false
+                    }
+                  ]
+                },
+                {
+                  "id": "view_4rfOOi-MZ3yt2eXm",
+                  "name": "B. Portfolio & Activity",
+                  "filters": [
+                    {
+                      "property_id": "property_LtmeU8aTCBEreQ35",
+                      "select_option_value": "B. Portfolio & Activity"
+                    }
+                  ],
+                  "property_ids": [
+                    "property_a-RwbLGym7dJP3ad",
+                    "property_aG8v9txOLakOFqq3",
+                    "property_NxYc4YtvfyWQss9T",
+                    "property_tBj3R7PpSxsUSyFM",
+                    "property_BuiMYBaYrFh_7qjC"
+                  ],
+                  "property_layouts": [
+                    {
+                      "x": 0,
+                      "y": 0,
+                      "width": 1,
+                      "property_id": "property_a-RwbLGym7dJP3ad",
+                      "height": 1
+                    },
+                    {
+                      "x": 0,
+                      "y": 1,
+                      "width": 1,
+                      "property_id": "property_aG8v9txOLakOFqq3",
+                      "height": 1
+                    },
+                    {
+                      "x": 0,
+                      "y": 2,
+                      "width": 1,
+                      "property_id": "property_NxYc4YtvfyWQss9T",
+                      "height": 1
+                    },
+                    {
+                      "x": 0,
+                      "y": 3,
+                      "width": 1,
+                      "property_id": "property_tBj3R7PpSxsUSyFM",
+                      "height": 1
+                    },
+                    {
+                      "x": 0,
+                      "y": 4,
+                      "width": 1,
+                      "property_id": "property_BuiMYBaYrFh_7qjC",
+                      "height": 1
+                    }
+                  ],
+                  "num_pinned_properties": 0,
+                  "property_options": [
+                    {
+                      "property_id": "property_a-RwbLGym7dJP3ad",
+                      "block_workers_edits": false
+                    },
+                    {
+                      "property_id": "property_NxYc4YtvfyWQss9T",
+                      "block_workers_edits": false
+                    },
+                    {
+                      "property_id": "property_tBj3R7PpSxsUSyFM",
+                      "block_workers_edits": false
+                    },
+                    {
+                      "property_id": "property_BuiMYBaYrFh_7qjC",
+                      "block_workers_edits": false
+                    },
+                    {
+                      "property_id": "property_aG8v9txOLakOFqq3",
+                      "block_workers_edits": false
+                    }
+                  ]
+                }
+              ],
+              "triggers": [],
+              "main_view": {
+                "id": "view_5621rJ1tcf3t4aC6",
+                "filters": [],
+                "property_ids": [
+                  "property_MCPsfQOOE7irogHJ",
+                  "property_HhnV2yzgrUrK4ZyP",
+                  "property_zKkT-uc-u8U1xc4h",
+                  "property_LtmeU8aTCBEreQ35",
+                  "property_K3FuJOcyn82PnhMm",
+                  "property_xmX18OsoRnD0VEVf",
+                  "property_HKyvQK48SwX9lBWl",
+                  "property_KJWajmg9_7kKIq98",
+                  "property_a-RwbLGym7dJP3ad",
+                  "property_aG8v9txOLakOFqq3",
+                  "property_NxYc4YtvfyWQss9T",
+                  "property_tBj3R7PpSxsUSyFM",
+                  "property_BuiMYBaYrFh_7qjC"
+                ],
+                "property_layouts": [
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "width": 4,
+                    "property_id": "property_MCPsfQOOE7irogHJ",
+                    "height": 4
+                  },
+                  {
+                    "x": 4,
+                    "y": 0,
+                    "width": 4,
+                    "property_id": "property_LtmeU8aTCBEreQ35",
+                    "height": 4
+                  },
+                  {
+                    "x": 0,
+                    "y": 20,
+                    "width": 4,
+                    "property_id": "property_K3FuJOcyn82PnhMm",
+                    "height": 4
+                  },
+                  {
+                    "x": 4,
+                    "y": 20,
+                    "width": 4,
+                    "property_id": "property_xmX18OsoRnD0VEVf",
+                    "height": 4
+                  },
+                  {
+                    "x": 8,
+                    "y": 20,
+                    "width": 4,
+                    "property_id": "property_HKyvQK48SwX9lBWl",
+                    "height": 4
+                  },
+                  {
+                    "x": 0,
+                    "y": 24,
+                    "width": 4,
+                    "property_id": "property_KJWajmg9_7kKIq98",
+                    "height": 4
+                  },
+                  {
+                    "x": 4,
+                    "y": 24,
+                    "width": 4,
+                    "property_id": "property_a-RwbLGym7dJP3ad",
+                    "height": 4
+                  },
+                  {
+                    "x": 8,
+                    "y": 24,
+                    "width": 4,
+                    "property_id": "property_aG8v9txOLakOFqq3",
+                    "height": 4
+                  },
+                  {
+                    "x": 0,
+                    "y": 28,
+                    "width": 4,
+                    "property_id": "property_NxYc4YtvfyWQss9T",
+                    "height": 4
+                  },
+                  {
+                    "x": 4,
+                    "y": 28,
+                    "width": 4,
+                    "property_id": "property_tBj3R7PpSxsUSyFM",
+                    "height": 4
+                  },
+                  {
+                    "x": 8,
+                    "y": 28,
+                    "width": 4,
+                    "property_id": "property_BuiMYBaYrFh_7qjC",
+                    "height": 4
+                  },
+                  {
+                    "x": 8,
+                    "y": 0,
+                    "width": 4,
+                    "property_id": "property_zKkT-uc-u8U1xc4h",
+                    "height": 4
+                  },
+                  {
+                    "x": 0,
+                    "y": 4,
+                    "width": 4,
+                    "property_id": "property_HhnV2yzgrUrK4ZyP",
+                    "height": 4
+                  }
+                ],
+                "num_pinned_properties": 0,
+                "property_options": [
+                  {
+                    "property_id": "property_MCPsfQOOE7irogHJ",
+                    "block_workers_edits": false
+                  },
+                  {
+                    "property_id": "property_xmX18OsoRnD0VEVf",
+                    "block_workers_edits": false
+                  },
+                  {
+                    "property_id": "property_a-RwbLGym7dJP3ad",
+                    "block_workers_edits": false
+                  },
+                  {
+                    "property_id": "property_NxYc4YtvfyWQss9T",
+                    "block_workers_edits": false
+                  },
+                  {
+                    "property_id": "property_zKkT-uc-u8U1xc4h",
+                    "block_workers_edits": false
+                  },
+                  {
+                    "property_id": "property_LtmeU8aTCBEreQ35",
+                    "block_workers_edits": false
+                  },
+                  {
+                    "property_id": "property_HhnV2yzgrUrK4ZyP",
+                    "block_workers_edits": false
+                  },
+                  {
+                    "property_id": "property_tBj3R7PpSxsUSyFM",
+                    "block_workers_edits": false
+                  },
+                  {
+                    "property_id": "property_BuiMYBaYrFh_7qjC",
+                    "block_workers_edits": false
+                  },
+                  {
+                    "property_id": "property_K3FuJOcyn82PnhMm",
+                    "block_workers_edits": false
+                  },
+                  {
+                    "property_id": "property_KJWajmg9_7kKIq98",
+                    "block_workers_edits": false
+                  },
+                  {
+                    "property_id": "property_HKyvQK48SwX9lBWl",
+                    "block_workers_edits": false
+                  },
+                  {
+                    "property_id": "property_aG8v9txOLakOFqq3",
+                    "block_workers_edits": false
+                  }
+                ]
+              }
+            }
+          },
+          "description": null,
+          "tool": "manual",
+          "inputs": [],
+          "tool_config": {
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_VbIfLYv-Od4K10Yb",
+          "name": "Portfolio Snapshot",
+          "type": "text",
+          "description": "result = @<Pproperty_a-RwbLGym7dJP3ad>[0]",
+          "tool": "code",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_a-RwbLGym7dJP3ad",
+              "via_property_id": null,
+              "entities_filter": [
+                "ok",
+                {
+                  "filters": [
+                    {
+                      "subject": "field_select_option_value",
+                      "matcher": {
+                        "name": "property_any_of",
+                        "values": [
+                          "Yes"
+                        ],
+                        "case_sensitive": false,
+                        "property_id": "019cbe3c-ece1-7c2f-8d9f-b276a88fedf4",
+                        "reference_support_via_property_id": null
+                      }
+                    }
+                  ],
+                  "conjunction": "and"
+                }
+              ]
+            }
+          ],
+          "tool_config": {
+            "input_mode": "primary_and_extracted",
+            "code_config": {
+              "dependencies": [],
+              "unsafe_allow_network": false
+            }
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_Sevf0Wh8iiKYdmmF",
+          "name": "Follow-on Investments",
+          "type": "text",
+          "description": "result = @<Pproperty_NxYc4YtvfyWQss9T>[0]",
+          "tool": "code",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_NxYc4YtvfyWQss9T",
+              "via_property_id": null,
+              "entities_filter": [
+                "ok",
+                {
+                  "filters": [
+                    {
+                      "subject": "field_select_option_value",
+                      "matcher": {
+                        "name": "property_any_of",
+                        "values": [
+                          "Yes"
+                        ],
+                        "case_sensitive": false,
+                        "property_id": "019cbe3c-ece1-7c2f-8d9f-b276a88fedf4",
+                        "reference_support_via_property_id": null
+                      }
+                    }
+                  ],
+                  "conjunction": "and"
+                }
+              ]
+            }
+          ],
+          "tool_config": {
+            "input_mode": "primary_and_extracted",
+            "code_config": {
+              "dependencies": [],
+              "unsafe_allow_network": false
+            }
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_rMikRJ4KwzW4pB8n",
+          "name": "Realizations",
+          "type": "text",
+          "description": "result = @<Pproperty_tBj3R7PpSxsUSyFM>[0]",
+          "tool": "code",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_tBj3R7PpSxsUSyFM",
+              "via_property_id": null,
+              "entities_filter": [
+                "ok",
+                {
+                  "filters": [
+                    {
+                      "subject": "field_select_option_value",
+                      "matcher": {
+                        "name": "property_any_of",
+                        "values": [
+                          "Yes"
+                        ],
+                        "case_sensitive": false,
+                        "property_id": "019cbe3c-ece1-7c2f-8d9f-b276a88fedf4",
+                        "reference_support_via_property_id": null
+                      }
+                    }
+                  ],
+                  "conjunction": "and"
+                }
+              ]
+            }
+          ],
+          "tool_config": {
+            "input_mode": "primary_and_extracted",
+            "code_config": {
+              "dependencies": [],
+              "unsafe_allow_network": false
+            }
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_6Sc9p8o4azzpS-sh",
+          "name": "Other Comments",
+          "type": "text",
+          "description": "result = @<Pproperty_BuiMYBaYrFh_7qjC>[0]",
+          "tool": "code",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_BuiMYBaYrFh_7qjC",
+              "via_property_id": null,
+              "entities_filter": [
+                "ok",
+                {
+                  "filters": [
+                    {
+                      "subject": "field_select_option_value",
+                      "matcher": {
+                        "name": "property_any_of",
+                        "values": [
+                          "Yes"
+                        ],
+                        "case_sensitive": false,
+                        "property_id": "019cbe3c-ece1-7c2f-8d9f-b276a88fedf4",
+                        "reference_support_via_property_id": null
+                      }
+                    }
+                  ],
+                  "conjunction": "and"
+                }
+              ]
+            }
+          ],
+          "tool_config": {
+            "input_mode": "primary_and_extracted",
+            "code_config": {
+              "dependencies": [],
+              "unsafe_allow_network": false
+            }
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_EBH1dLggwJn5YHMu",
+          "name": "Key Statistics",
+          "type": "json",
+          "description": "result = @<Pproperty_K3FuJOcyn82PnhMm>",
+          "tool": "code",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_K3FuJOcyn82PnhMm",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "input_mode": "primary_and_extracted",
+            "code_config": {
+              "dependencies": [],
+              "unsafe_allow_network": false
+            }
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_Rm0NcjdYFAUFtUjo",
+          "name": "Public Market Exposure",
+          "type": "json",
+          "description": "result = @<Pproperty_KJWajmg9_7kKIq98>[0]",
+          "tool": "code",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_KJWajmg9_7kKIq98",
+              "via_property_id": null,
+              "entities_filter": [
+                "ok",
+                {
+                  "filters": [
+                    {
+                      "subject": "field_select_option_value",
+                      "matcher": {
+                        "name": "property_any_of",
+                        "values": [
+                          "Yes"
+                        ],
+                        "case_sensitive": false,
+                        "property_id": "019cbe3c-ece1-7c2f-8d9f-b276a88fedf4",
+                        "reference_support_via_property_id": null
+                      }
+                    }
+                  ],
+                  "conjunction": "and"
+                }
+              ]
+            }
+          ],
+          "tool_config": {
+            "input_mode": "primary_and_extracted",
+            "code_config": {
+              "dependencies": [],
+              "unsafe_allow_network": false
+            }
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_tT4shgNxE0Mb-4Uu",
+          "name": "Geographic Exposure",
+          "type": "json",
+          "description": "result = @<Pproperty_HKyvQK48SwX9lBWl>[0]",
+          "tool": "code",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_HKyvQK48SwX9lBWl",
+              "via_property_id": null,
+              "entities_filter": [
+                "ok",
+                {
+                  "filters": [
+                    {
+                      "subject": "field_select_option_value",
+                      "matcher": {
+                        "name": "property_any_of",
+                        "values": [
+                          "Yes"
+                        ],
+                        "case_sensitive": false,
+                        "property_id": "019cbe3c-ece1-7c2f-8d9f-b276a88fedf4",
+                        "reference_support_via_property_id": null
+                      }
+                    }
+                  ],
+                  "conjunction": "and"
+                }
+              ]
+            }
+          ],
+          "tool_config": {
+            "input_mode": "primary_and_extracted",
+            "code_config": {
+              "dependencies": [],
+              "unsafe_allow_network": false
+            }
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_BpZVlvCJ9Kk-yn-o",
+          "name": "New Investments",
+          "type": "text",
+          "description": "result = @<Pproperty_aG8v9txOLakOFqq3>[0]",
+          "tool": "code",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_aG8v9txOLakOFqq3",
+              "via_property_id": null,
+              "entities_filter": [
+                "ok",
+                {
+                  "filters": [
+                    {
+                      "subject": "field_select_option_value",
+                      "matcher": {
+                        "name": "property_any_of",
+                        "values": [
+                          "Yes"
+                        ],
+                        "case_sensitive": false,
+                        "property_id": "019cbe3c-ece1-7c2f-8d9f-b276a88fedf4",
+                        "reference_support_via_property_id": null
+                      }
+                    }
+                  ],
+                  "conjunction": "and"
+                }
+              ]
+            }
+          ],
+          "tool_config": {
+            "input_mode": "primary_and_extracted",
+            "code_config": {
+              "dependencies": [],
+              "unsafe_allow_network": false
+            }
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_QxZqSt8Pn8tJs1ZH",
+          "name": "Sections",
+          "type": "multi_select",
+          "config": {
+            "options": [
+              {
+                "value": "A. Fund Overview & Performance",
+                "color": "rainbow-01",
+                "tool_fallback": false
+              },
+              {
+                "value": "B. Portfolio & Activity",
+                "color": "rainbow-02",
+                "tool_fallback": false
+              },
+              {
+                "value": "C. Debugging",
+                "color": "rainbow-17",
+                "tool_fallback": false
+              }
+            ],
+            "default_option": null,
+            "max_selected": 0
+          },
+          "description": "result = [\"A. Fund Overview & Performance\", \"B. Portfolio & Activity\", \"C. Debugging\"]",
+          "tool": "code",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_BIFta3TkUpgKBPjH",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "input_mode": "primary_and_extracted",
+            "code_config": {
+              "dependencies": [],
+              "unsafe_allow_network": false
+            }
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_RmzWYm_w25gnGL3p",
+          "name": "Industry Exposure",
+          "type": "json",
+          "description": "result = @<Pproperty_xmX18OsoRnD0VEVf>[0]",
+          "tool": "code",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_xmX18OsoRnD0VEVf",
+              "via_property_id": null,
+              "entities_filter": [
+                "ok",
+                {
+                  "filters": [
+                    {
+                      "subject": "field_select_option_value",
+                      "matcher": {
+                        "name": "property_any_of",
+                        "values": [
+                          "Yes"
+                        ],
+                        "case_sensitive": false,
+                        "property_id": "019cbe3c-ece1-7c2f-8d9f-b276a88fedf4",
+                        "reference_support_via_property_id": null
+                      }
+                    }
+                  ],
+                  "conjunction": "and"
+                }
+              ]
+            }
+          ],
+          "tool_config": {
+            "input_mode": "primary_and_extracted",
+            "code_config": {
+              "dependencies": [],
+              "unsafe_allow_network": false
+            }
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_HJ-DGJvv4foj7cfd",
+          "name": "LP Commitment",
+          "type": "json",
+          "description": "## Role\nYou are a **Private Equity Tear Sheet Analyst** specialized in converting GP quarterly reports, fund documents, and performance data into accurate, structured data for downstream reporting systems for **V7**.\n\n## Objective\nExtract or calculate the requested tear sheet field with precision and return output in a normalized, markdown format. Accuracy is critically important. Prioritize correctness.\n\n# Field to extract: LP Commitment\nExtract Tilad's total commitment to the fund. Return in USD.\nReturn STRICT JSON object format only: {\"value\": x, \"unit\": y}. Use only the keys \"value\" and \"unit\" with no additional keys. Set x to a number when present; otherwise set x to \"None\". Set y to \"USD\" when known; otherwise set y to \"None\".- For missing numbers which are given as JSONs, return {\"value\": \"None\", \"unit\": \"None\"}.- For currency and numeric values, return numbers with two decimal places when applicable.\n\n## Formatting Rules\n- Use `Not Found` when information is not located in the source documents.\n- Use `Not Applicable` only when the provision truly does not apply to this fund.\n- Normalize all dates to `YYYY-MM-DD` and all currencies to USD unless otherwise stated.\n- Express percentages as decimal percentages (e.g. 37.20%).\n- Express multiples with one or two decimal places followed by 'x' (e.g. 1.30x).\n- Do not guess or fabricate numbers.",
+          "tool": "gemini_2_5_flash",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_MCPsfQOOE7irogHJ",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": true,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_9-yITcCIgW5bFnch",
+          "name": "JSON",
+          "type": "json",
+          "description": "result = {\n    \"Fund Name\": @<Pproperty_BIFta3TkUpgKBPjH>,\n    \"Fund Manager\": @<Pproperty_OhXAIyOzXCCqqnks>,\n    \"Strategy\": @<Pproperty_ODnW6tgR2dKatzin>,\n    \"Sub-Strategy\": @<Pproperty_EpA9Z35VegoNsHja>,\n    \"Fund Stage\": @<Pproperty_raSQTqUyNwWBumN8>,\n    \"Geography\": @<Pproperty_6xq_vyKjLB-sQig8>,\n    \"Vintage Year\": @<Pproperty_JoWKXEHgdrbmH9cU>,\n    \"Fund Size\": @<Pproperty_K0Xzv1Llmx_Z4Cxb>,\n    \"LP Commitment\": @<Pproperty_HJ-DGJvv4foj7cfd>,\n    \"LP % Ownership\": @<Pproperty_o8SRdNlQ21zGNLOD>,\n    \"LP % Funded\": @<Pproperty_0uqPg6-_4mYxLp8d>,\n    \"GP Commitment %\": @<Pproperty_6WFBrLV3W6AU15_I>,\n    \"Fund Strategy Description\": @<Pproperty_luGVuiF8RFfe4O9K>,\n    \"Key Statistics\": @<Pproperty_EBH1dLggwJn5YHMu>,\n    \"Industry Exposure\": @<Pproperty_RmzWYm_w25gnGL3p>,\n    \"Geographic Exposure\": @<Pproperty_tT4shgNxE0Mb-4Uu>,\n    \"Public Market Exposure\": @<Pproperty_Rm0NcjdYFAUFtUjo>,\n    \"Portfolio Snapshot\": @<Pproperty_VbIfLYv-Od4K10Yb>,\n    \"New Investments\": @<Pproperty_BpZVlvCJ9Kk-yn-o>,\n    \"Follow-on Investments\": @<Pproperty_Sevf0Wh8iiKYdmmF>,\n    \"Realizations\": @<Pproperty_rMikRJ4KwzW4pB8n>,\n    \"Other Comments\": @<Pproperty_6Sc9p8o4azzpS-sh>,\n    \"Most Recent Report\": @<Pproperty_HCytBPwtULeS7-aO>\n}",
+          "tool": "code",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_BIFta3TkUpgKBPjH",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_OhXAIyOzXCCqqnks",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_ODnW6tgR2dKatzin",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_EpA9Z35VegoNsHja",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_raSQTqUyNwWBumN8",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_6xq_vyKjLB-sQig8",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_JoWKXEHgdrbmH9cU",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_K0Xzv1Llmx_Z4Cxb",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_HJ-DGJvv4foj7cfd",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_o8SRdNlQ21zGNLOD",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_0uqPg6-_4mYxLp8d",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_6WFBrLV3W6AU15_I",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_luGVuiF8RFfe4O9K",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_EBH1dLggwJn5YHMu",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_RmzWYm_w25gnGL3p",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_tT4shgNxE0Mb-4Uu",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_Rm0NcjdYFAUFtUjo",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_VbIfLYv-Od4K10Yb",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_BpZVlvCJ9Kk-yn-o",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_Sevf0Wh8iiKYdmmF",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_rMikRJ4KwzW4pB8n",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_6Sc9p8o4azzpS-sh",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_HCytBPwtULeS7-aO",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "input_mode": "primary_and_extracted",
+            "code_config": {
+              "dependencies": [],
+              "unsafe_allow_network": false
+            }
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_pkX1WLo8V_s5xg8Q",
+          "name": "Trigger Calculation",
+          "type": "text",
+          "description": "import random\nresult = random.randint(1,9999)",
+          "tool": "code",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_9-yITcCIgW5bFnch",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "input_mode": "primary_and_extracted",
+            "code_config": {
+              "dependencies": [],
+              "unsafe_allow_network": false
+            }
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_38gox8bgeCZE7vmo",
+          "name": "Generated File",
+          "type": "file",
+          "description": "Use the “Generate Tear Sheet” skill to generate the tear sheet.\n\nIf it fails return a comprehensive error.html file.",
+          "tool": "gpt_5_mini",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_pkX1WLo8V_s5xg8Q",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [
+            {
+              "skill_id": "skill_POPqaISC4KqW5ikd",
+              "argument_overrides": [
+                {
+                  "value": "V7_API_KEY",
+                  "arg_name": "api_key",
+                  "value_type": "fixed",
+                  "arg_type": "secret",
+                  "value_format": "default"
+                }
+              ]
+            }
+          ],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_uan1MYkUQwAKkblc",
+          "name": "debugging",
+          "type": "json",
+          "description": "result = @<Pproperty_38gox8bgeCZE7vmo>",
+          "tool": "code",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_38gox8bgeCZE7vmo",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "input_mode": "primary_and_extracted",
+            "code_config": {
+              "dependencies": [],
+              "unsafe_allow_network": false
+            }
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        }
+      ],
+      "views": [
+        {
+          "id": "view_seXsqvqvm1h-da7V",
+          "name": "B. Portfolio & Activity",
+          "filters": [
+            {
+              "property_id": "property_QxZqSt8Pn8tJs1ZH",
+              "select_option_value": "B. Portfolio & Activity"
+            }
+          ],
+          "property_ids": [
+            "property_BIFta3TkUpgKBPjH",
+            "property_HCytBPwtULeS7-aO",
+            "property_VbIfLYv-Od4K10Yb",
+            "property_BpZVlvCJ9Kk-yn-o",
+            "property_Sevf0Wh8iiKYdmmF",
+            "property_rMikRJ4KwzW4pB8n",
+            "property_6Sc9p8o4azzpS-sh"
+          ],
+          "property_layouts": [
+            {
+              "x": 0,
+              "y": 12,
+              "width": 4,
+              "property_id": "property_HCytBPwtULeS7-aO",
+              "height": 4
+            },
+            {
+              "x": 0,
+              "y": 8,
+              "width": 4,
+              "property_id": "property_BIFta3TkUpgKBPjH",
+              "height": 4
+            },
+            {
+              "x": 0,
+              "y": 0,
+              "width": 1,
+              "property_id": "property_VbIfLYv-Od4K10Yb",
+              "height": 1
+            },
+            {
+              "x": 0,
+              "y": 1,
+              "width": 1,
+              "property_id": "property_BpZVlvCJ9Kk-yn-o",
+              "height": 1
+            },
+            {
+              "x": 0,
+              "y": 2,
+              "width": 1,
+              "property_id": "property_Sevf0Wh8iiKYdmmF",
+              "height": 1
+            },
+            {
+              "x": 0,
+              "y": 3,
+              "width": 1,
+              "property_id": "property_rMikRJ4KwzW4pB8n",
+              "height": 1
+            },
+            {
+              "x": 0,
+              "y": 4,
+              "width": 1,
+              "property_id": "property_6Sc9p8o4azzpS-sh",
+              "height": 1
+            }
+          ],
+          "num_pinned_properties": 0,
+          "property_options": [
+            {
+              "property_id": "property_BIFta3TkUpgKBPjH",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_HCytBPwtULeS7-aO",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_VbIfLYv-Od4K10Yb",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_Sevf0Wh8iiKYdmmF",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_rMikRJ4KwzW4pB8n",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_6Sc9p8o4azzpS-sh",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_BpZVlvCJ9Kk-yn-o",
+              "block_workers_edits": false
+            }
+          ]
+        },
+        {
+          "id": "view_litmfnZvRT-cPagW",
+          "name": "A. Fund Overview & Performance",
+          "filters": [
+            {
+              "property_id": "property_QxZqSt8Pn8tJs1ZH",
+              "select_option_value": "A. Fund Overview & Performance"
+            }
+          ],
+          "property_ids": [
+            "property_BIFta3TkUpgKBPjH",
+            "property_OhXAIyOzXCCqqnks",
+            "property_ODnW6tgR2dKatzin",
+            "property_EpA9Z35VegoNsHja",
+            "property_raSQTqUyNwWBumN8",
+            "property_6xq_vyKjLB-sQig8",
+            "property_JoWKXEHgdrbmH9cU",
+            "property_K0Xzv1Llmx_Z4Cxb",
+            "property_HJ-DGJvv4foj7cfd",
+            "property_o8SRdNlQ21zGNLOD",
+            "property_0uqPg6-_4mYxLp8d",
+            "property_6WFBrLV3W6AU15_I",
+            "property_luGVuiF8RFfe4O9K",
+            "property_EBH1dLggwJn5YHMu",
+            "property_RmzWYm_w25gnGL3p",
+            "property_tT4shgNxE0Mb-4Uu",
+            "property_Rm0NcjdYFAUFtUjo"
+          ],
+          "property_layouts": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 1,
+              "property_id": "property_BIFta3TkUpgKBPjH",
+              "height": 1
+            },
+            {
+              "x": 0,
+              "y": 1,
+              "width": 1,
+              "property_id": "property_OhXAIyOzXCCqqnks",
+              "height": 1
+            },
+            {
+              "x": 0,
+              "y": 2,
+              "width": 1,
+              "property_id": "property_ODnW6tgR2dKatzin",
+              "height": 1
+            },
+            {
+              "x": 0,
+              "y": 3,
+              "width": 1,
+              "property_id": "property_EpA9Z35VegoNsHja",
+              "height": 1
+            },
+            {
+              "x": 0,
+              "y": 4,
+              "width": 1,
+              "property_id": "property_raSQTqUyNwWBumN8",
+              "height": 1
+            },
+            {
+              "x": 0,
+              "y": 5,
+              "width": 1,
+              "property_id": "property_6xq_vyKjLB-sQig8",
+              "height": 1
+            },
+            {
+              "x": 0,
+              "y": 6,
+              "width": 1,
+              "property_id": "property_JoWKXEHgdrbmH9cU",
+              "height": 1
+            },
+            {
+              "x": 0,
+              "y": 7,
+              "width": 1,
+              "property_id": "property_K0Xzv1Llmx_Z4Cxb",
+              "height": 1
+            },
+            {
+              "x": 0,
+              "y": 8,
+              "width": 1,
+              "property_id": "property_HJ-DGJvv4foj7cfd",
+              "height": 1
+            },
+            {
+              "x": 0,
+              "y": 9,
+              "width": 1,
+              "property_id": "property_o8SRdNlQ21zGNLOD",
+              "height": 1
+            },
+            {
+              "x": 0,
+              "y": 10,
+              "width": 1,
+              "property_id": "property_0uqPg6-_4mYxLp8d",
+              "height": 1
+            },
+            {
+              "x": 0,
+              "y": 11,
+              "width": 1,
+              "property_id": "property_6WFBrLV3W6AU15_I",
+              "height": 1
+            },
+            {
+              "x": 0,
+              "y": 12,
+              "width": 1,
+              "property_id": "property_luGVuiF8RFfe4O9K",
+              "height": 1
+            },
+            {
+              "x": 0,
+              "y": 13,
+              "width": 1,
+              "property_id": "property_EBH1dLggwJn5YHMu",
+              "height": 1
+            },
+            {
+              "x": 0,
+              "y": 14,
+              "width": 1,
+              "property_id": "property_RmzWYm_w25gnGL3p",
+              "height": 1
+            },
+            {
+              "x": 0,
+              "y": 15,
+              "width": 1,
+              "property_id": "property_tT4shgNxE0Mb-4Uu",
+              "height": 1
+            },
+            {
+              "x": 0,
+              "y": 16,
+              "width": 1,
+              "property_id": "property_Rm0NcjdYFAUFtUjo",
+              "height": 1
+            }
+          ],
+          "num_pinned_properties": 0,
+          "property_options": [
+            {
+              "property_id": "property_JoWKXEHgdrbmH9cU",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_ODnW6tgR2dKatzin",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_BIFta3TkUpgKBPjH",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_OhXAIyOzXCCqqnks",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_K0Xzv1Llmx_Z4Cxb",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_6WFBrLV3W6AU15_I",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_raSQTqUyNwWBumN8",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_EpA9Z35VegoNsHja",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_o8SRdNlQ21zGNLOD",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_6xq_vyKjLB-sQig8",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_luGVuiF8RFfe4O9K",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_0uqPg6-_4mYxLp8d",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_EBH1dLggwJn5YHMu",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_Rm0NcjdYFAUFtUjo",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_tT4shgNxE0Mb-4Uu",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_RmzWYm_w25gnGL3p",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_HJ-DGJvv4foj7cfd",
+              "block_workers_edits": false
+            }
+          ]
+        },
+        {
+          "id": "view_rTOL-asqhXFbJZUK",
+          "name": "C. Debugging",
+          "filters": [
+            {
+              "property_id": "property_QxZqSt8Pn8tJs1ZH",
+              "select_option_value": "C. Debugging"
+            }
+          ],
+          "property_ids": [
+            "property_jDsX-pytZ9cfDo1F",
+            "property_9-yITcCIgW5bFnch",
+            "property_pkX1WLo8V_s5xg8Q",
+            "property_uan1MYkUQwAKkblc"
+          ],
+          "property_layouts": [
+            {
+              "x": 0,
+              "y": 20,
+              "width": 4,
+              "property_id": "property_BIFta3TkUpgKBPjH",
+              "height": 4
+            },
+            {
+              "x": 0,
+              "y": 16,
+              "width": 4,
+              "property_id": "property_QxZqSt8Pn8tJs1ZH",
+              "height": 4
+            },
+            {
+              "x": 0,
+              "y": 12,
+              "width": 4,
+              "property_id": "property_9-yITcCIgW5bFnch",
+              "height": 4
+            },
+            {
+              "x": 0,
+              "y": 8,
+              "width": 4,
+              "property_id": "property_pkX1WLo8V_s5xg8Q",
+              "height": 4
+            },
+            {
+              "x": 0,
+              "y": 4,
+              "width": 4,
+              "property_id": "property_uan1MYkUQwAKkblc",
+              "height": 4
+            },
+            {
+              "x": 0,
+              "y": 0,
+              "width": 4,
+              "property_id": "property_jDsX-pytZ9cfDo1F",
+              "height": 4
+            }
+          ],
+          "num_pinned_properties": 0,
+          "property_options": [
+            {
+              "property_id": "property_jDsX-pytZ9cfDo1F",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_9-yITcCIgW5bFnch",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_pkX1WLo8V_s5xg8Q",
+              "block_workers_edits": false
+            },
+            {
+              "property_id": "property_uan1MYkUQwAKkblc",
+              "block_workers_edits": false
+            }
+          ]
+        }
+      ],
+      "triggers": [],
+      "main_view": {
+        "id": "view_oTTiV8sTWfGiymxI",
+        "filters": [],
+        "property_ids": [
+          "property_jDsX-pytZ9cfDo1F",
+          "property_BIFta3TkUpgKBPjH",
+          "property_HCytBPwtULeS7-aO",
+          "property_38gox8bgeCZE7vmo",
+          "property_QxZqSt8Pn8tJs1ZH"
+        ],
+        "property_layouts": [
+          {
+            "x": 0,
+            "y": 40,
+            "width": 4,
+            "property_id": "property_uan1MYkUQwAKkblc",
+            "height": 4
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 4,
+            "property_id": "property_jDsX-pytZ9cfDo1F",
+            "height": 4
+          },
+          {
+            "x": 4,
+            "y": 0,
+            "width": 4,
+            "property_id": "property_QxZqSt8Pn8tJs1ZH",
+            "height": 4
+          },
+          {
+            "x": 4,
+            "y": 4,
+            "width": 4,
+            "property_id": "property_BIFta3TkUpgKBPjH",
+            "height": 4
+          },
+          {
+            "x": 8,
+            "y": 4,
+            "width": 4,
+            "property_id": "property_OhXAIyOzXCCqqnks",
+            "height": 4
+          },
+          {
+            "x": 0,
+            "y": 8,
+            "width": 4,
+            "property_id": "property_ODnW6tgR2dKatzin",
+            "height": 4
+          },
+          {
+            "x": 4,
+            "y": 8,
+            "width": 4,
+            "property_id": "property_EpA9Z35VegoNsHja",
+            "height": 4
+          },
+          {
+            "x": 8,
+            "y": 8,
+            "width": 4,
+            "property_id": "property_raSQTqUyNwWBumN8",
+            "height": 4
+          },
+          {
+            "x": 0,
+            "y": 12,
+            "width": 4,
+            "property_id": "property_6xq_vyKjLB-sQig8",
+            "height": 4
+          },
+          {
+            "x": 4,
+            "y": 12,
+            "width": 4,
+            "property_id": "property_JoWKXEHgdrbmH9cU",
+            "height": 4
+          },
+          {
+            "x": 8,
+            "y": 12,
+            "width": 4,
+            "property_id": "property_K0Xzv1Llmx_Z4Cxb",
+            "height": 4
+          },
+          {
+            "x": 0,
+            "y": 16,
+            "width": 4,
+            "property_id": "property_HJ-DGJvv4foj7cfd",
+            "height": 4
+          },
+          {
+            "x": 4,
+            "y": 16,
+            "width": 4,
+            "property_id": "property_o8SRdNlQ21zGNLOD",
+            "height": 4
+          },
+          {
+            "x": 8,
+            "y": 16,
+            "width": 4,
+            "property_id": "property_0uqPg6-_4mYxLp8d",
+            "height": 4
+          },
+          {
+            "x": 0,
+            "y": 20,
+            "width": 4,
+            "property_id": "property_6WFBrLV3W6AU15_I",
+            "height": 4
+          },
+          {
+            "x": 4,
+            "y": 20,
+            "width": 4,
+            "property_id": "property_luGVuiF8RFfe4O9K",
+            "height": 4
+          },
+          {
+            "x": 8,
+            "y": 20,
+            "width": 4,
+            "property_id": "property_EBH1dLggwJn5YHMu",
+            "height": 4
+          },
+          {
+            "x": 0,
+            "y": 24,
+            "width": 4,
+            "property_id": "property_RmzWYm_w25gnGL3p",
+            "height": 4
+          },
+          {
+            "x": 4,
+            "y": 24,
+            "width": 4,
+            "property_id": "property_tT4shgNxE0Mb-4Uu",
+            "height": 4
+          },
+          {
+            "x": 8,
+            "y": 24,
+            "width": 4,
+            "property_id": "property_Rm0NcjdYFAUFtUjo",
+            "height": 4
+          },
+          {
+            "x": 0,
+            "y": 28,
+            "width": 4,
+            "property_id": "property_VbIfLYv-Od4K10Yb",
+            "height": 4
+          },
+          {
+            "x": 4,
+            "y": 28,
+            "width": 4,
+            "property_id": "property_BpZVlvCJ9Kk-yn-o",
+            "height": 4
+          },
+          {
+            "x": 8,
+            "y": 28,
+            "width": 4,
+            "property_id": "property_Sevf0Wh8iiKYdmmF",
+            "height": 4
+          },
+          {
+            "x": 0,
+            "y": 32,
+            "width": 4,
+            "property_id": "property_rMikRJ4KwzW4pB8n",
+            "height": 4
+          },
+          {
+            "x": 4,
+            "y": 32,
+            "width": 4,
+            "property_id": "property_6Sc9p8o4azzpS-sh",
+            "height": 4
+          },
+          {
+            "x": 8,
+            "y": 0,
+            "width": 4,
+            "property_id": "property_HCytBPwtULeS7-aO",
+            "height": 4
+          },
+          {
+            "x": 0,
+            "y": 4,
+            "width": 4,
+            "property_id": "property_9-yITcCIgW5bFnch",
+            "height": 4
+          },
+          {
+            "x": 8,
+            "y": 32,
+            "width": 4,
+            "property_id": "property_38gox8bgeCZE7vmo",
+            "height": 4
+          },
+          {
+            "x": 0,
+            "y": 36,
+            "width": 4,
+            "property_id": "property_pkX1WLo8V_s5xg8Q",
+            "height": 4
+          }
+        ],
+        "num_pinned_properties": 0,
+        "property_options": [
+          {
+            "property_id": "property_BIFta3TkUpgKBPjH",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_HCytBPwtULeS7-aO",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_jDsX-pytZ9cfDo1F",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_QxZqSt8Pn8tJs1ZH",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_38gox8bgeCZE7vmo",
+            "block_workers_edits": false
+          }
+        ]
+      }
+    }
+  ],
+  "external_objects": {
+    "skill_POPqaISC4KqW5ikd": {
+      "id": "019cbe3e-5400-70d3-bebe-0d47b4eec990",
+      "name": "Generate V7 Tear Sheet",
+      "type": "skill",
+      "provider": null,
+      "integration_id": null
+    }
+  }
+}

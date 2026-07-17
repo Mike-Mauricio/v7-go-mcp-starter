@@ -1,0 +1,1341 @@
+{
+  "projects": [
+    {
+      "id": "project_idfOGNxA92o0iOzZ",
+      "name": "GTM - Company Analysis",
+      "type": "regular",
+      "description": "This agent uses web search to do research and analysis on all of a company's key information to get a holistic understanding their value prop, ICP, GTM motions, and more.",
+      "properties": [
+        {
+          "id": "property_0pdBGc8TIr1Of_0I",
+          "name": "Company Name",
+          "type": "text",
+          "description": null,
+          "tool": "manual",
+          "inputs": [],
+          "tool_config": {
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_Q4cff8OAkyLYKC9b",
+          "name": "Company Website",
+          "type": "url",
+          "description": null,
+          "tool": "manual",
+          "inputs": [],
+          "tool_config": {
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_1OrILTInJ3UZ5tlr",
+          "name": "Company Value Prop",
+          "type": "text",
+          "description": "Extract the @<Pproperty_0pdBGc8TIr1Of_0I>value proposition from the homepage and product pages of it’s @<Pproperty_Q4cff8OAkyLYKC9b>.\n- Visit the homepage and primary product pages.\n- Summarize the main customer benefits and positioning statements.\n- Identify keywords or repeated language emphasizing their differentiators.\n- Avoid internal taglines or vague marketing fluff. Focus on external value claims.\nReturn your output in Markdown with headers and bullet points. Summarize their value prop in two sentences first, then include two header sections \n- Key Customer Benefits and Positioning\n- Keywords & Differentiators",
+          "tool": "web_search",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_0pdBGc8TIr1Of_0I",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_Q4cff8OAkyLYKC9b",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_vsKH1MdhZeOvfBb3",
+          "name": "Business Strategy",
+          "type": "text",
+          "description": "Analyze the @<Pproperty_0pdBGc8TIr1Of_0I> business strategy based on observable clues from their public-facing @<Pproperty_Q4cff8OAkyLYKC9b>. Identify clues about the company’s business and go-to-market strategy. \n- Review homepage, product pages, about section, and blog.\n- Look for references to core audiences, sales channels, pricing models, or target geographies.\n- Summarize strategic priorities (e.g., self-serve, enterprise motion, PLG).\n- Ground insights in observable evidence.\nReturn your output in Markdown with headers and bullet points.",
+          "tool": "web_search",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_0pdBGc8TIr1Of_0I",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_Q4cff8OAkyLYKC9b",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_ARE9BSXwRsbEHFHO",
+          "name": "ICP",
+          "type": "text",
+          "description": "Determine the @<Pproperty_0pdBGc8TIr1Of_0I> Ideal Customer Profile (ICP) based on how it communicates across its @<Pproperty_Q4cff8OAkyLYKC9b> use case pages, and blog. \nInfer the ICP based on target industries, company sizes, buyer personas, and key pain points addressed.\n- Analyze use case pages and customer logos.\n- Review blog themes and tone.\n- Focus only on factual and clearly stated audience clues.\nReturn your output in markdown format with headers and bullet points.",
+          "tool": "web_search",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_0pdBGc8TIr1Of_0I",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_Q4cff8OAkyLYKC9b",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_0lsyuFbh9N5-dwg2",
+          "name": "Pricing Tiers",
+          "type": "text",
+          "description": "Compare and benchmark the feature sets offered by the @<Pproperty_0pdBGc8TIr1Of_0I> across their pricing tiers on their @<Pproperty_Q4cff8OAkyLYKC9b>. The objective is to compare plan tiers (if any) and highlight key feature differences.\n- Visit each pricing page.\n- List out plan names, prices, and feature sets.\n- Highlight major differences (e.g., usage limits, integrations, support levels).\n- Return insights in a structured, comparison-ready format in markdown, using headers and bullet points.",
+          "tool": "web_search",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_0pdBGc8TIr1Of_0I",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_Q4cff8OAkyLYKC9b",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_u6_k1vRclSvflTWT",
+          "name": "Case Studies",
+          "type": "collection",
+          "config": {
+            "properties": [
+              {
+                "id": "property_VHsGmo0b1V07Gadb",
+                "name": "Name",
+                "type": "text"
+              },
+              {
+                "id": "property__IVhgdDGEEiabq-H",
+                "name": "Industry",
+                "type": "text"
+              },
+              {
+                "id": "property_jdQY5n06FkNFEAam",
+                "name": "Summary",
+                "type": "text"
+              },
+              {
+                "id": "property_Cv05hTmu0HuMZDcx",
+                "name": "Performance Metrics / ROI",
+                "type": "text"
+              }
+            ],
+            "subproject_config": {
+              "properties": [],
+              "views": [],
+              "triggers": [],
+              "main_view": {
+                "id": "view_dGxusA9ErouLEPnT",
+                "filters": [],
+                "property_ids": [
+                  "property_VHsGmo0b1V07Gadb",
+                  "property__IVhgdDGEEiabq-H",
+                  "property_jdQY5n06FkNFEAam",
+                  "property_Cv05hTmu0HuMZDcx"
+                ],
+                "property_layouts": [
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "width": 4,
+                    "property_id": "property_VHsGmo0b1V07Gadb",
+                    "height": 4
+                  },
+                  {
+                    "x": 4,
+                    "y": 0,
+                    "width": 4,
+                    "property_id": "property__IVhgdDGEEiabq-H",
+                    "height": 4
+                  },
+                  {
+                    "x": 8,
+                    "y": 0,
+                    "width": 4,
+                    "property_id": "property_jdQY5n06FkNFEAam",
+                    "height": 4
+                  },
+                  {
+                    "x": 0,
+                    "y": 4,
+                    "width": 4,
+                    "property_id": "property_Cv05hTmu0HuMZDcx",
+                    "height": 4
+                  }
+                ],
+                "num_pinned_properties": 0,
+                "property_options": [
+                  {
+                    "property_id": "property_VHsGmo0b1V07Gadb",
+                    "block_workers_edits": false
+                  },
+                  {
+                    "property_id": "property__IVhgdDGEEiabq-H",
+                    "block_workers_edits": false
+                  },
+                  {
+                    "property_id": "property_jdQY5n06FkNFEAam",
+                    "block_workers_edits": false
+                  },
+                  {
+                    "property_id": "property_Cv05hTmu0HuMZDcx",
+                    "block_workers_edits": false
+                  }
+                ]
+              }
+            }
+          },
+          "description": "Collect and summarize customer success stories or case studies published on the @<Pproperty_Q4cff8OAkyLYKC9b>. Understand how the @<Pproperty_0pdBGc8TIr1Of_0I> presents customer outcomes and industry relevance.\n- Navigate to the company’s customer, success stories, or case study sections.\n- For each example, extract the customer name, industry, a summary of the case study content, and any performance metrics or ROI.\nCall out any case studies you can find published their @<Pproperty_Q4cff8OAkyLYKC9b>",
+          "tool": "web_search",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_Q4cff8OAkyLYKC9b",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_0pdBGc8TIr1Of_0I",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_SrZXpZsb1b7OUg2X",
+          "name": "Integrations",
+          "type": "collection",
+          "config": {
+            "properties": [
+              {
+                "id": "property_hyOlA_r2cfkD5wOn",
+                "name": "Integration",
+                "type": "text"
+              },
+              {
+                "id": "property_hWJ2lDn9nq_VHM46",
+                "name": "Integration Type",
+                "type": "text"
+              },
+              {
+                "id": "property_kIy330am-B_-ayAL",
+                "name": "Native or API-Based",
+                "type": "text"
+              }
+            ],
+            "subproject_config": {
+              "properties": [],
+              "views": [],
+              "triggers": [],
+              "main_view": {
+                "id": "view_7iaMycsMn1TLA-8i",
+                "filters": [],
+                "property_ids": [
+                  "property_hyOlA_r2cfkD5wOn",
+                  "property_hWJ2lDn9nq_VHM46",
+                  "property_kIy330am-B_-ayAL"
+                ],
+                "property_layouts": [
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "width": 4,
+                    "property_id": "property_hyOlA_r2cfkD5wOn",
+                    "height": 4
+                  },
+                  {
+                    "x": 4,
+                    "y": 0,
+                    "width": 4,
+                    "property_id": "property_hWJ2lDn9nq_VHM46",
+                    "height": 4
+                  },
+                  {
+                    "x": 8,
+                    "y": 0,
+                    "width": 4,
+                    "property_id": "property_kIy330am-B_-ayAL",
+                    "height": 4
+                  }
+                ],
+                "num_pinned_properties": 0,
+                "property_options": [
+                  {
+                    "property_id": "property_hyOlA_r2cfkD5wOn",
+                    "block_workers_edits": false
+                  },
+                  {
+                    "property_id": "property_hWJ2lDn9nq_VHM46",
+                    "block_workers_edits": false
+                  },
+                  {
+                    "property_id": "property_kIy330am-B_-ayAL",
+                    "block_workers_edits": false
+                  }
+                ]
+              }
+            }
+          },
+          "description": "Identify and categorize third-party platforms that @<Pproperty_0pdBGc8TIr1Of_0I> integrates with, that they have listed on their @<Pproperty_Q4cff8OAkyLYKC9b>. The objective is to map out the company’s tech ecosystem and integration strategy.\n- Look for \"Integrations,\" \"Apps,\" or \"Marketplace\" sections. The integrations pages will not always have these types of names so search across the @<Pproperty_Q4cff8OAkyLYKC9b>for other pages as well.\n- List each integration and categorize by type (CRM, Data, Messaging, etc.).\n- Distinguish between native and API-based integrations if noted.",
+          "tool": "gpt_4o",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_0pdBGc8TIr1Of_0I",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_Q4cff8OAkyLYKC9b",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "disabled"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_gEooh4K47pRVkYsE",
+          "name": "3rd Party Partners",
+          "type": "text",
+          "description": "Extract third-party technologies and platforms featured as partners or integrations on @<Pproperty_Q4cff8OAkyLYKC9b> \nReveal which tools or platforms the @<Pproperty_0pdBGc8TIr1Of_0I> aligns itself with publicly. \n- Search integration and partner pages.\n- Note prominent logos, tech stacks, and featured partners.\n- Focus on direct integrations, not just compatibility mentions.\nReturn your output in markdown with headers and bullet points.",
+          "tool": "web_search",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_Q4cff8OAkyLYKC9b",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_0pdBGc8TIr1Of_0I",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property__ZY6oerAmxQ9faYs",
+          "name": "Analyst Reports",
+          "type": "text",
+          "description": "Search online and identify third-party commentary or analyst insights published about @<Pproperty_0pdBGc8TIr1Of_0I>. \nFind analyst mentions, news, or thought leadership featuring the company.\n- Search Google News, Gartner, G2, and Forrester.\n- Capture headlines, report names, and source links.\n- Prioritize recent, relevant, and reputable mentions.\nReturn your output in markdown format with headers and bullet points, cite your source and return the URL for each of your mentioned outputs.",
+          "tool": "web_search",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_0pdBGc8TIr1Of_0I",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_hRiJ821gr4lvYBNN",
+          "name": "Content/SEO Strategy",
+          "type": "text",
+          "description": "Identify and extract the content and SEO strategy of @<Pproperty_0pdBGc8TIr1Of_0I> based on their blog on their @<Pproperty_Q4cff8OAkyLYKC9b>. \nReveal content themes, personas targeted, and SEO priorities.\n- Analyze recent blog titles and categories.\n- Note keywords, formats (how-tos, case studies, technical), and publishing frequency.\n- Highlight target industries and buyer personas.\nReturn your output in markdown format with headers and bullet points.",
+          "tool": "web_search",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_0pdBGc8TIr1Of_0I",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_Q4cff8OAkyLYKC9b",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_ReoEMf-CG_kr_miO",
+          "name": "Public KPIs",
+          "type": "text",
+          "description": "Retrieve public KPIs disclosed by a company, such as number of employees, offices, customers, locations, and annual revenue. \n- Review About, Blog, Press, or Investor sections.\n- Look for figures like users served, stores opened, revenue milestones, etc.\n- Only include official, current data — no estimates or third-party guesses.\nReturn your output in markdown with headers and bullet points.",
+          "tool": "web_search",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_Q4cff8OAkyLYKC9b",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_0pdBGc8TIr1Of_0I",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_c_dym0XghR86gRVD",
+          "name": "Financial Health",
+          "type": "text",
+          "description": "Research and identify the @<Pproperty_0pdBGc8TIr1Of_0I> financial status and market momentum. Understand what the financial health of the company overall.\n- Review Crunchbase, Pitchbook, or LinkedIn announcements.\n- Summarize funding rounds, valuation data, and recent investor activity.\n- Highlight growth rate signals (funding acceleration, increased investment size, etc.).\nReturn your output in markdown with headers and bullet points.",
+          "tool": "web_search",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_0pdBGc8TIr1Of_0I",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_F5ixjiHsthgA_ddP",
+          "name": "Regulatory and Compliance",
+          "type": "text",
+          "description": "Understand any competitive advantages or constraints from regulatory perspectives.\n- Look for mentions of compliance standards (e.g., GDPR, HIPAA, SOC2).\n- Identify regulatory compliance positioning as a differentiation factor.\nReturn your output in markdown with headers and bullet points.",
+          "tool": "web_search",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_0pdBGc8TIr1Of_0I",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_Q4cff8OAkyLYKC9b",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_aJU8mJUs6KJTJ4lO",
+          "name": "Security Posture",
+          "type": "text",
+          "description": "Gauge @<Pproperty_0pdBGc8TIr1Of_0I> emphasis on security and data protection based on their @<Pproperty_Q4cff8OAkyLYKC9b>and public information on the web.\n- Review security or trust center sections.\n- Identify advertised security certifications (ISO27001, SOC2 Type II, FedRAMP).\n- Note any public statements or incidents related to security.\nReturn your output in markdown with headers and bullet points.",
+          "tool": "gpt_4o",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_0pdBGc8TIr1Of_0I",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_Q4cff8OAkyLYKC9b",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "disabled"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_RveqMBAQ5ar-vShb",
+          "name": "Strategic Customers",
+          "type": "collection",
+          "config": {
+            "properties": [
+              {
+                "id": "property_r5MoaFtzb7NxX9_m",
+                "name": "Customer",
+                "type": "text"
+              },
+              {
+                "id": "property_bRoY7CxdLlMYMUak",
+                "name": "Strategic Importance",
+                "type": "text"
+              },
+              {
+                "id": "property_4aNSgvgLgBdk6z76",
+                "name": "Industry",
+                "type": "text"
+              }
+            ],
+            "subproject_config": {
+              "properties": [],
+              "views": [],
+              "triggers": [],
+              "main_view": {
+                "id": "view_RuzjS_iu-vYbJyDm",
+                "filters": [],
+                "property_ids": [
+                  "property_r5MoaFtzb7NxX9_m",
+                  "property_bRoY7CxdLlMYMUak",
+                  "property_4aNSgvgLgBdk6z76"
+                ],
+                "property_layouts": [
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "width": 4,
+                    "property_id": "property_r5MoaFtzb7NxX9_m",
+                    "height": 4
+                  },
+                  {
+                    "x": 4,
+                    "y": 0,
+                    "width": 4,
+                    "property_id": "property_bRoY7CxdLlMYMUak",
+                    "height": 4
+                  },
+                  {
+                    "x": 8,
+                    "y": 0,
+                    "width": 4,
+                    "property_id": "property_4aNSgvgLgBdk6z76",
+                    "height": 4
+                  }
+                ],
+                "num_pinned_properties": 0,
+                "property_options": [
+                  {
+                    "property_id": "property_r5MoaFtzb7NxX9_m",
+                    "block_workers_edits": false
+                  },
+                  {
+                    "property_id": "property_bRoY7CxdLlMYMUak",
+                    "block_workers_edits": false
+                  },
+                  {
+                    "property_id": "property_4aNSgvgLgBdk6z76",
+                    "block_workers_edits": false
+                  }
+                ]
+              }
+            }
+          },
+          "description": "Identify the @<Pproperty_0pdBGc8TIr1Of_0I>’s strategic market penetration through marquee customer names and references on the @<Pproperty_Q4cff8OAkyLYKC9b>. \n- Extract featured brands, or flagship customers prominently mentioned.\n- Categorize the strategic importance (enterprise logos, high-growth startups, public institutions, strategic logos).\n- Categorize the industry the logo is from.",
+          "tool": "web_search",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_Q4cff8OAkyLYKC9b",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_0pdBGc8TIr1Of_0I",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_qL4pDjldGo0G-xbi",
+          "name": "Market Segment",
+          "type": "single_select",
+          "config": {
+            "options": [
+              {
+                "value": "Enterprise",
+                "color": "rainbow-06",
+                "tool_fallback": false
+              },
+              {
+                "value": "Mid-Market",
+                "color": "rainbow-08",
+                "tool_fallback": false
+              },
+              {
+                "value": "SMB/Startup",
+                "color": "rainbow-14",
+                "tool_fallback": false
+              }
+            ],
+            "default_option": null
+          },
+          "description": "Review the @<Pproperty_ReoEMf-CG_kr_miO>and @<Pproperty_c_dym0XghR86gRVD>of the @<Pproperty_0pdBGc8TIr1Of_0I>. If the annual revenue is more than $100,000,000 in @<Pproperty_c_dym0XghR86gRVD>, or if the employee count is more than 10,000, then consider the company “Enterprise”. If annual revenue is between $25,000,000 and $99,999,999 or if employee count is between 1,000 and 9,999 the consider the company “Mid-Market”.\nIf the annual revenue is less than $25,000,000 or employee count is below 1,000 then consider the company “SMB/Startup”.",
+          "tool": "gpt_4o",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_c_dym0XghR86gRVD",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_ReoEMf-CG_kr_miO",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_0pdBGc8TIr1Of_0I",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "disabled"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_dT_dGV5pwENkKxj4",
+          "name": "Industry",
+          "type": "single_select",
+          "config": {
+            "options": [
+              {
+                "value": "Consulting",
+                "color": "rainbow-06",
+                "tool_fallback": false
+              },
+              {
+                "value": "Finance",
+                "color": "rainbow-05",
+                "tool_fallback": false
+              },
+              {
+                "value": "Insurance",
+                "color": "rainbow-12",
+                "tool_fallback": false
+              },
+              {
+                "value": "Legal",
+                "color": "rainbow-02",
+                "tool_fallback": false
+              },
+              {
+                "value": "Logistics",
+                "color": "rainbow-10",
+                "tool_fallback": false
+              },
+              {
+                "value": "Manufacturing",
+                "color": "rainbow-15",
+                "tool_fallback": false
+              },
+              {
+                "value": "Pharmaceuticals",
+                "color": "rainbow-03",
+                "tool_fallback": false
+              },
+              {
+                "value": "Real Estate",
+                "color": "rainbow-17",
+                "tool_fallback": false
+              },
+              {
+                "value": "Retail",
+                "color": "rainbow-07",
+                "tool_fallback": false
+              },
+              {
+                "value": "Technology",
+                "color": "rainbow-01",
+                "tool_fallback": false
+              },
+              {
+                "value": "Transportation",
+                "color": "rainbow-14",
+                "tool_fallback": false
+              }
+            ],
+            "default_option": null
+          },
+          "description": "Identify what industry this @<Pproperty_0pdBGc8TIr1Of_0I> is in.",
+          "tool": "o3_mini",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_0pdBGc8TIr1Of_0I",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_1OrILTInJ3UZ5tlr",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "low"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_XwcBl4AirqxljzjJ",
+          "name": "Account Summary Report",
+          "type": "text",
+          "description": "Produce a clear, concise, and actionable summary document to guide the account manager in strategic planning, stakeholder engagement, and identifying upsell and cross-sell opportunities.\nInstructions:\nExecutive Summary:\nProvide a brief overview highlighting key findings about the company, its market position, strategic priorities, and notable recent activities.\nCustomer Value Proposition:\nClearly articulate the core benefits, differentiators, and key positioning statements identified.\nStrategic Insights & Opportunities:\nSummarize the competitor's business strategy, go-to-market motions, and inferred priorities.\nHighlight opportunities for your company to align or differentiate strategically.\nIdeal Customer Profile (ICP):\nClearly define the ICP including target industries, buyer personas, key pain points, and any identified segments for targeted outreach.\nCompetitor & Market Analysis:\nOutline key feature benchmarks, pricing structures, and competitive strengths or gaps.\nSummarize third-party integrations, partner ecosystems, and technological compatibility or competitive advantages.\nGrowth Indicators & Expansion Signals:\nHighlight key hiring trends, funding milestones, adjacent market moves, or regulatory shifts signaling future growth or strategic pivots.\nMarket Reputation & Customer Impact:\nSummarize analyst coverage, public KPIs, prominent customer logos, and impactful customer success metrics.\nContent, SEO & Brand Voice:\nBriefly describe the competitor’s content strategy, SEO priorities, and brand communication style.\nActionable Recommendations:\nProvide 3–5 clear, specific, and practical recommendations for account expansion or competitive positioning.\nFormat:\nUse headings and bullet points for clarity.\nInclude clear, actionable insights and next steps.\nKeep the report concise.",
+          "tool": "gemini_2_5_pro",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_0pdBGc8TIr1Of_0I",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_1OrILTInJ3UZ5tlr",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_vsKH1MdhZeOvfBb3",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_ARE9BSXwRsbEHFHO",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_gEooh4K47pRVkYsE",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property__ZY6oerAmxQ9faYs",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_hRiJ821gr4lvYBNN",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_ReoEMf-CG_kr_miO",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_c_dym0XghR86gRVD",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_F5ixjiHsthgA_ddP",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_aJU8mJUs6KJTJ4lO",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_qL4pDjldGo0G-xbi",
+              "via_property_id": null,
+              "entities_filter": null
+            },
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_dT_dGV5pwENkKxj4",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "high"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_99m2sdpSb5fYqsGj",
+          "name": "File - Summary Report",
+          "type": "file",
+          "description": "Your task is to generate a professional stylized report using all the information in @<Pproperty_XwcBl4AirqxljzjJ>. Output in HTML. Make it look like a professional document. Do not miss or skip information. Make use of visualizations, widgets, charts, or graphs where appropriate.",
+          "tool": "claude_4_opus",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_XwcBl4AirqxljzjJ",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "medium"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        },
+        {
+          "id": "property_1aFxCL9vl2b1pHm2",
+          "name": "File",
+          "type": "file",
+          "description": "Your task is to generate a professional stylized report using all the information in @<Pproperty_XwcBl4AirqxljzjJ>. Output in HTML. Make it look like a professional document. Do not miss or skip information. Make use of visualizations, widgets, charts, or graphs where appropriate.",
+          "tool": "claude_4_opus",
+          "inputs": [
+            {
+              "target": "value",
+              "entity_id": null,
+              "property_id": "property_XwcBl4AirqxljzjJ",
+              "via_property_id": null,
+              "entities_filter": null
+            }
+          ],
+          "tool_config": {
+            "llm_config": {
+              "stream_progress_updates": false,
+              "thinking_effort": "medium"
+            },
+            "input_mode": "primary_and_extracted"
+          },
+          "enabled_skills": [],
+          "is_grounded": false,
+          "skip_behaviour": "never",
+          "incomplete_collection_input_rows_behaviour": "never",
+          "visible_in_entity_sidebar": true
+        }
+      ],
+      "views": [],
+      "triggers": [],
+      "main_view": {
+        "id": "view_9KXb9MILFAZ-sl_Z",
+        "filters": [],
+        "property_ids": [
+          "property_0pdBGc8TIr1Of_0I",
+          "property_Q4cff8OAkyLYKC9b",
+          "property_99m2sdpSb5fYqsGj",
+          "property_qL4pDjldGo0G-xbi",
+          "property_dT_dGV5pwENkKxj4",
+          "property_1OrILTInJ3UZ5tlr",
+          "property_vsKH1MdhZeOvfBb3",
+          "property_ARE9BSXwRsbEHFHO",
+          "property_0lsyuFbh9N5-dwg2",
+          "property_u6_k1vRclSvflTWT",
+          "property_SrZXpZsb1b7OUg2X",
+          "property_gEooh4K47pRVkYsE",
+          "property_RveqMBAQ5ar-vShb",
+          "property__ZY6oerAmxQ9faYs",
+          "property_hRiJ821gr4lvYBNN",
+          "property_ReoEMf-CG_kr_miO",
+          "property_aJU8mJUs6KJTJ4lO",
+          "property_c_dym0XghR86gRVD",
+          "property_F5ixjiHsthgA_ddP",
+          "property_XwcBl4AirqxljzjJ",
+          "property_1aFxCL9vl2b1pHm2"
+        ],
+        "property_layouts": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 2,
+            "property_id": "property_0pdBGc8TIr1Of_0I",
+            "height": 4
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "width": 2,
+            "property_id": "property_Q4cff8OAkyLYKC9b",
+            "height": 4
+          },
+          {
+            "x": 0,
+            "y": 8,
+            "width": 4,
+            "property_id": "property_1OrILTInJ3UZ5tlr",
+            "height": 15
+          },
+          {
+            "x": 4,
+            "y": 23,
+            "width": 4,
+            "property_id": "property_vsKH1MdhZeOvfBb3",
+            "height": 19
+          },
+          {
+            "x": 4,
+            "y": 42,
+            "width": 4,
+            "property_id": "property_ARE9BSXwRsbEHFHO",
+            "height": 16
+          },
+          {
+            "x": 8,
+            "y": 23,
+            "width": 4,
+            "property_id": "property_0lsyuFbh9N5-dwg2",
+            "height": 19
+          },
+          {
+            "x": 0,
+            "y": 74,
+            "width": 12,
+            "property_id": "property_u6_k1vRclSvflTWT",
+            "height": 13
+          },
+          {
+            "x": 6,
+            "y": 87,
+            "width": 6,
+            "property_id": "property_SrZXpZsb1b7OUg2X",
+            "height": 4
+          },
+          {
+            "x": 0,
+            "y": 23,
+            "width": 4,
+            "property_id": "property_gEooh4K47pRVkYsE",
+            "height": 19
+          },
+          {
+            "x": 0,
+            "y": 58,
+            "width": 6,
+            "property_id": "property__ZY6oerAmxQ9faYs",
+            "height": 16
+          },
+          {
+            "x": 6,
+            "y": 91,
+            "width": 6,
+            "property_id": "property_hRiJ821gr4lvYBNN",
+            "height": 16
+          },
+          {
+            "x": 8,
+            "y": 42,
+            "width": 4,
+            "property_id": "property_ReoEMf-CG_kr_miO",
+            "height": 16
+          },
+          {
+            "x": 0,
+            "y": 42,
+            "width": 4,
+            "property_id": "property_c_dym0XghR86gRVD",
+            "height": 16
+          },
+          {
+            "x": 0,
+            "y": 91,
+            "width": 6,
+            "property_id": "property_F5ixjiHsthgA_ddP",
+            "height": 16
+          },
+          {
+            "x": 6,
+            "y": 58,
+            "width": 6,
+            "property_id": "property_aJU8mJUs6KJTJ4lO",
+            "height": 16
+          },
+          {
+            "x": 0,
+            "y": 87,
+            "width": 6,
+            "property_id": "property_RveqMBAQ5ar-vShb",
+            "height": 4
+          },
+          {
+            "x": 2,
+            "y": 4,
+            "width": 2,
+            "property_id": "property_qL4pDjldGo0G-xbi",
+            "height": 4
+          },
+          {
+            "x": 0,
+            "y": 4,
+            "width": 2,
+            "property_id": "property_dT_dGV5pwENkKxj4",
+            "height": 4
+          },
+          {
+            "x": 4,
+            "y": 0,
+            "width": 8,
+            "property_id": "property_XwcBl4AirqxljzjJ",
+            "height": 23
+          },
+          {
+            "x": 0,
+            "y": 107,
+            "width": 4,
+            "property_id": "property_99m2sdpSb5fYqsGj",
+            "height": 4
+          },
+          {
+            "x": 4,
+            "y": 107,
+            "width": 4,
+            "property_id": "property_1aFxCL9vl2b1pHm2",
+            "height": 4
+          }
+        ],
+        "num_pinned_properties": 1,
+        "property_options": [
+          {
+            "property_id": "property_0pdBGc8TIr1Of_0I",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_Q4cff8OAkyLYKC9b",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_1OrILTInJ3UZ5tlr",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_vsKH1MdhZeOvfBb3",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_ARE9BSXwRsbEHFHO",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_0lsyuFbh9N5-dwg2",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_u6_k1vRclSvflTWT",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_SrZXpZsb1b7OUg2X",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_gEooh4K47pRVkYsE",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property__ZY6oerAmxQ9faYs",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_hRiJ821gr4lvYBNN",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_ReoEMf-CG_kr_miO",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_c_dym0XghR86gRVD",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_F5ixjiHsthgA_ddP",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_aJU8mJUs6KJTJ4lO",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_RveqMBAQ5ar-vShb",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_qL4pDjldGo0G-xbi",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_dT_dGV5pwENkKxj4",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_XwcBl4AirqxljzjJ",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_99m2sdpSb5fYqsGj",
+            "block_workers_edits": false
+          },
+          {
+            "property_id": "property_1aFxCL9vl2b1pHm2",
+            "block_workers_edits": false
+          }
+        ]
+      }
+    }
+  ],
+  "external_objects": {}
+}

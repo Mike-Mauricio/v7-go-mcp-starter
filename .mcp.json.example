@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "v7-go": {
+      "type": "http",
+      "url": "https://mcp.go.v7labs.com"
+    }
+  }
+}
