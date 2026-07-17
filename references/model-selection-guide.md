@@ -2,7 +2,17 @@
 
 ## Core Principle
 
-**Use the best model for the task, not a default provider.** Vary models across properties — a single agent should use GPT, Gemini, and Claude where each excels. The examples may lean GPT-heavy because they were built iteratively; new agents should be smarter about model selection from the start.
+**Always start with the lowest-cost model that can do the job.** Default to `gemini_3_flash`, `gpt_5_mini`, or `claude_4_5_haiku` for every property. Only escalate to more expensive models (`gpt_5_5`, `claude_4_6_sonnet`, `gemini_3_1_pro`, `claude_4_7_opus`) after testing shows the cheaper model isn't accurate enough.
+
+This is critical for cost control. A workflow with 15 properties all running on `claude_4_6_sonnet` will cost 5-10x more than one that uses `gemini_3_flash` for simple extraction and reserves Sonnet for the 2-3 properties that genuinely need it.
+
+**The escalation path:** `gemini_3_flash` / `gpt_5_mini` / `claude_4_5_haiku` → `gpt_5_5` → `claude_4_6_sonnet` / `gemini_3_1_pro` → `claude_4_7_opus`
+
+Only jump to the higher-cost models when:
+- The task requires multi-step reasoning or complex judgment (not simple extraction)
+- The task synthesizes outputs from multiple upstream properties into one summary
+- Compliance, legal, or audit requirements demand the highest accuracy
+- You've tested with the cheaper model and the results aren't good enough
 
 ## Task-to-Model Decision Matrix
 

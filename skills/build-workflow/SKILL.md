@@ -79,7 +79,7 @@ Read `references/model-selection-guide.md` for the full decision matrix. Quick r
 | Deep reasoning | `claude_4_7_opus` or `gpt_5_5` (high) | `high` |
 | Data parsing / formatting | `code` (Python) | N/A (free) |
 
-**Key rule:** A well-designed workflow uses multiple models. Use the best model for each task, not a single default. A typical workflow might use Gemini for classification, GPT for extraction, Claude for compliance, and Python for formatting.
+**Key rule: Always default to the cheapest model.** Start every property with `gemini_3_flash`, `gpt_5_mini`, or `claude_4_5_haiku`. Only escalate to `gpt_5_5`, `claude_4_6_sonnet`, or higher after the user tests and finds accuracy insufficient. Reserve expensive models for multi-property synthesis, complex reasoning, and compliance review.
 
 **Thinking effort compatibility:**
 - `minimal` works with GPT-5 Mini and Gemini 3 Flash
