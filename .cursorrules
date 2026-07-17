@@ -66,12 +66,13 @@ Apply these automatically when helping users design workflows:
 2. **One property, one task** — If a prompt does 3+ things, split it into separate properties
 3. **Selective grounding** — Enable AI Citations (`is_grounded: true`) for document extraction; disable for summaries and classifications
 4. **N/A handling in every extraction prompt** — Always include: "If not found, respond with N/A"
-5. **Default to the cheapest model** — Always start with `gemini_3_flash`, `gpt_5_mini`, or `claude_4_5_haiku`. Only escalate to `gpt_5_5`, `claude_4_6_sonnet`, or `claude_4_7_opus` after testing shows the cheaper model isn't accurate enough. Reserve expensive models for multi-property synthesis, complex reasoning, and compliance review. See `references/model-selection-guide.md`
-6. **Thinking effort starts at low** — `low` works on most models. Only increase when accuracy needs improvement
-7. **Normalize output formats** — Specify date formats (YYYY-MM-DD), percentages (1.5%), currency ($150M)
-8. **Use Python for zero-cost logic** — Formatting, parsing, calculations belong in `code` properties, not LLM calls
-9. **Test with representative documents** — Run 5-10 diverse samples before scaling
-10. **Include human review stages** — Add status properties that flag items for human QA
+5. **Default to the cheapest model** — Always start with `gemini_3_flash`, `gpt_5_mini`, or `claude_4_5_haiku`. Only escalate after testing shows the cheaper model isn't accurate enough. Reserve expensive models for multi-property synthesis, complex reasoning, and compliance review.
+6. **Mix model providers** — A well-designed workflow uses different models for different steps. Gemini for fast extraction and summaries, GPT for structured JSON and hub search, Claude for compliance and code. Pick the best model for each task — but start with the cheapest option in that category. See `references/model-selection-guide.md`
+7. **Thinking effort starts at low** — `low` works on most models. Only increase when accuracy needs improvement
+8. **Normalize output formats** — Specify date formats (YYYY-MM-DD), percentages (1.5%), currency ($150M)
+9. **Use Python for zero-cost logic** — Formatting, parsing, calculations belong in `code` properties, not LLM calls
+10. **Test with representative documents** — Run 5-10 diverse samples before scaling
+11. **Include human review stages** — Add status properties that flag items for human QA
 
 ## How to Help Users Build Workflows
 
