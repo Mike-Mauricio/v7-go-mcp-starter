@@ -73,18 +73,40 @@ It will walk you through the design, confirm your choices, and create the workfl
 | `CLAUDE.md` | AI instructions for Claude Code (the AI reads this to understand V7 Go) |
 | `.cursorrules` | Same instructions adapted for Cursor |
 | `AGENTS.md` | Same instructions adapted for Codex |
+| `CONTEXT-INDEX.md` | Task-based lookup — tells the AI which files to read for which task |
 | `skills/` | Guided workflows: build-workflow, design-agent, explore-data, getting-started |
-| `references/` | Platform guide, prompt patterns, model selection, workflow patterns, integration guide, example agents |
-| `templates/` | Workflow spec template and use case brief template |
+| `references/` | Platform guide, prompt patterns, model selection, workflow patterns, views, triggers, skills architecture, gotchas, integrations, regional setup, API endpoints, example agents |
+| `references/advanced/` | Advanced references: rebuild playbooks, SharePoint integration, cross-workspace operations |
+| `templates/` | Workflow spec, use case brief, workspace resources tracker |
 | `docs/` | Quickstart guide, best practices, FAQ |
 
 ## Reference Guides
 
+**Getting Started:**
+- [Quickstart](docs/quickstart.md) — 5-minute first workflow guide
 - [Platform Guide](references/v7-go-platform-guide.md) — What V7 Go is and how it works
+- [FAQ](docs/faq.md) — Common questions and troubleshooting
+
+**Building Workflows:**
 - [Prompt Patterns](references/prompt-patterns.md) — 7 reusable prompt templates for agent properties
 - [Model Selection](references/model-selection-guide.md) — Which AI model for which task
+- [Property Types](references/property-types-reference.md) — All property types, tools, and configurations
+- [Workflow Patterns](references/workflow-patterns.md) — 8 production patterns including LLM-as-a-Judge
+- [Views](references/views-reference.md) — Routing, triage, and conditional processing
 - [Best Practices](docs/best-practices.md) — 10 design principles from production workflows
-- [FAQ](docs/faq.md) — Common questions and troubleshooting
+- [Gotchas](references/gotchas.md) — 74 platform gotchas to avoid common mistakes
+
+**Connecting & Automating:**
+- [Integration Guide](references/integration-guide.md) — MCP Connectors, Zapier, API, Concierge
+- [Triggers](references/triggers-reference.md) — Email, schedule, and webhook triggers
+- [Skills Architecture](references/skills-architecture.md) — Building V7 Go platform skills
+- [Regional Setup](references/regional-setup.md) — EU vs US regions and data residency
+- [API Endpoints](references/api-endpoints.md) — Complete API endpoint reference
+
+**Advanced (for solutions engineers):**
+- [Rebuild Playbooks](references/advanced/rebuild-playbooks.md) — Agent migration and rebuild procedures
+- [SharePoint Integration](references/advanced/sharepoint-integration.md) — Enterprise SharePoint architectures
+- [Cross-Workspace](references/advanced/cross-workspace.md) — Multi-workspace operations and isolation
 
 ## Requirements
 

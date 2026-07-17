@@ -229,6 +229,90 @@ This pipeline uses Gemini for speed on simple tasks, GPT-5 for JSON precision, C
 
 ---
 
+## Pattern 7: LLM-as-a-Judge (Multi-Model Validation)
+
+Two independent AI models extract the same data from a document. A third "judge" model compares their outputs and resolves disagreements — routing high-confidence results straight through and flagging discrepancies for human review.
+
+### How It Works
+
+```
+Document → Extraction A (Model 1) → 
+                                      → Judge (Model 3) → STP or Human Review
+Document → Extraction B (Model 2) → 
+```
+
+1. **Extraction A** — Model from Provider 1 extracts the data
+2. **Extraction B** — Model from Provider 2 extracts the same data independently (different provider = different failure modes)
+3. **Judge** — A strong reasoning model compares both extractions against the original document, resolves conflicts, and assigns a confidence status
+4. **Routing** — Results that pass go straight through (STP); disagreements route to human review
+
+The judge sees the original document — it doesn't just compare the two outputs. It can verify against the source when the extractors disagree.
+
+### When to Use It
+
+- High-stakes extraction where errors are expensive (financial data, legal terms, compliance)
+- Workflows processing documents with variable quality (some clean, some messy)
+- When you need quantifiable confidence scores for downstream processes
+- Regulatory or audit contexts where "two sources agree" adds trust
+
+### Example: Invoice Processing with Dual Verification
+
+A finance team processes vendor invoices with strict accuracy requirements for AP automation.
+
+| Step | Property Type | Tool | Purpose |
+|------|--------------|------|---------|
+| Invoice Upload | file | manual | User uploads the invoice |
+| Document Type | single_select | gemini_3_flash | Classify: standard invoice, credit memo, or debit note |
+| Extraction A | json | gpt_5 | Extract: vendor, amount, date, line items, tax |
+| Extraction B | json | gemini_2_5_pro | Same extraction, different provider |
+| Judge | json | claude_4_5_sonnet | Compare A vs B, verify against source, produce final output |
+| Result | single_select | code | "STP" if judge says all_passed, "Needs Review" if not |
+
+**Views:** Create a "Straight-Through" view filtered to Result = STP, and a "Needs Review" view for discrepancies. Enable AI Citations on the Judge property so reviewers can see exactly where the judge found each value.
+
+### Judge Prompt Best Practices
+
+- Give the judge explicit matching rules: text fields use semantic comparison, numbers use a tolerance (e.g., ±$0.01), dates match to the calendar day
+- Default to conservative: if unsure, route to human review
+- Have the judge produce diagnostics: which fields matched, which didn't, and why
+- Enable grounding on the judge property — it should cite the source document
+
+---
+
+## Pattern 8: Multi-Agent Architecture (Master/Child)
+
+A "master" agent programmatically creates and configures "child" agents via the V7 Go API. This enables event-driven systems where one agent can spawn specialized agents for different document types, clients, or workflows.
+
+### How It Works
+
+1. **Master agent** receives an event (trigger, email, API call)
+2. Master creates infrastructure: Knowledge Hub, child project, config properties, trigger
+3. Master deploys the trigger on the child agent
+4. Child agent runs independently, processing its own documents
+
+### When to Use It
+
+- You need to create many similar agents with slight variations (different clients, different document types)
+- An event should automatically set up a new processing pipeline
+- You're building a platform-like experience where new workflows are provisioned on demand
+- Volume requires splitting work across specialized agents
+
+### Example: Client Onboarding Automation
+
+A professional services firm automatically provisions a document processing agent for each new client engagement.
+
+| Step | What Happens |
+|------|-------------|
+| 1 | New client record created in CRM → triggers master agent |
+| 2 | Master creates a Knowledge Hub with the client's reference docs |
+| 3 | Master creates a child agent with extraction properties tailored to the client's document types |
+| 4 | Master deploys an email trigger on the child agent |
+| 5 | Client team forwards documents to the trigger email → child agent processes them |
+
+**Note:** This is an advanced pattern that requires direct API calls. It's designed for solutions engineers building scalable systems, not for typical end-user workflow design. See `references/advanced/` for implementation details.
+
+---
+
 ## Combining Patterns
 
 Production workflows almost always combine multiple patterns. Here's how they layer:

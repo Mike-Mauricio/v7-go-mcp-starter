@@ -260,3 +260,35 @@ Rejected items are flagged for re-processing or manual handling
 | Is this high-volume (hundreds+ of documents/day)? | API is most reliable at scale. | MCP or Zapier work well. |
 
 When in doubt, start with MCP Connectors. They're built in, require the least setup, and work directly within your workflows.
+
+---
+
+## Concierge (Email-to-Chats)
+
+V7 Go provides a built-in email integration called **Concierge** that lets users send documents directly to an agent via email — no triggers, no API, no setup.
+
+### How It Works
+
+1. Every V7 Go workspace has a Concierge email address in this format:
+   ```
+   chat+{workspace_id}_{project_id}@agent.v7labs.com
+   ```
+2. When someone sends an email with attachments to this address, V7 Go:
+   - Creates a new chat session
+   - Uploads the attachments
+   - Processes them through the agent's workflow
+
+### Agent Design Requirement
+
+For Concierge to work, the agent **must** have a `file` property named exactly **"File"**. This is where the email attachment is deposited.
+
+### When to Use Concierge vs. Triggers
+
+| Feature | Concierge | Email Trigger |
+|---------|-----------|--------------|
+| Setup required | None — just send an email | Configure trigger + deploy |
+| Processing model | Chat-based (conversational) | Workflow-based (structured) |
+| Best for | Ad-hoc document processing, one-off requests | High-volume, automated pipelines |
+| Output | Chat response | AI Table rows |
+
+**Tip:** Concierge is great for getting started — users can forward documents without any V7 Go training. Migrate to triggers when volume increases or you need structured output.

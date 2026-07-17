@@ -178,15 +178,27 @@ V7 Go connects to external tools three ways:
 
 ## Reference Files
 
-For detailed guidance, read these files:
+For detailed guidance, read these files. See `CONTEXT-INDEX.md` for a task-based lookup of which files to read when.
 
+### Core References
 - `references/v7-go-platform-guide.md` — Full platform overview
 - `references/prompt-patterns.md` — 7 reusable prompt templates with examples
 - `references/model-selection-guide.md` — Model-to-task matrix and thinking effort rules
-- `references/property-types-reference.md` — All property types with configurations
-- `references/workflow-patterns.md` — Common workflow architectures from production builds
-- `references/integration-guide.md` — Connecting V7 Go to external systems
+- `references/property-types-reference.md` — All property types, tools, property chaining
+- `references/workflow-patterns.md` — 8 production workflow patterns (including LLM-as-a-Judge and Multi-Agent)
+- `references/integration-guide.md` — Connecting V7 Go to external systems (MCP, Zapier, API, Concierge)
+- `references/views-reference.md` — Views, routing, triage, and conditional processing
+- `references/triggers-reference.md` — Trigger types (email, schedule, webhook), creation, deployment
+- `references/skills-architecture.md` — Building V7 Go platform skills
+- `references/regional-setup.md` — EU vs US regions, data residency
+- `references/gotchas.md` — 74 platform gotchas (check before deploying!)
+- `references/api-endpoints.md` — Complete API endpoint reference
 - `references/examples/` — 5 production-tested agent configurations
+
+### Advanced References (for solutions engineers and power users)
+- `references/advanced/rebuild-playbooks.md` — Agent migration and rebuild procedures
+- `references/advanced/sharepoint-integration.md` — SharePoint integration architectures
+- `references/advanced/cross-workspace.md` — Multi-workspace operations and isolation
 
 ## Skills
 
@@ -208,3 +220,6 @@ When helping V7 Go users:
 - **Use V7 Go terminology correctly.** Agents (not bots), properties (not fields), Knowledge Hubs (not document libraries), AI Citations (not references).
 - **Check MCP connection first.** If the V7 MCP isn't connected, guide setup before doing anything else.
 - **Reference the docs.** When writing prompts, check `references/prompt-patterns.md`. When choosing models, check `references/model-selection-guide.md`.
+- **Check gotchas before deploying.** Skim `references/gotchas.md` (at minimum the Top 10) before creating or updating any workflow.
+- **Never use `auto_llm` as a tool.** This tool is deprecated and banned — always select a specific model.
+- **Set up views for routing.** After creating properties, set up views to filter and route results (see `references/views-reference.md`).
