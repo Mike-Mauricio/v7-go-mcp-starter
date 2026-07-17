@@ -15,7 +15,7 @@ You must respond with the [field name] only. If not found, respond with "N/A".
 ```
 
 **When to use**: Single-field extraction, entity identification, date/number extraction
-**Recommended tool**: `gpt_5` or `gpt_4o` with `thinking_effort: "disabled"` or `"low"`
+**Recommended tool**: `gpt_5_5` or `gemini_3_flash` with `thinking_effort: "low"`
 **Grounded**: Yes
 
 ### Production Example (Insurance Slip — Underwriter)
@@ -38,7 +38,7 @@ If the document does not fit into any of these categories, classify it as [fallb
 ```
 
 **When to use**: Document routing, type detection, status assignment
-**Recommended tool**: `gpt_5_2` or `gpt_5_mini` with `thinking_effort: "disabled"`
+**Recommended tool**: `gpt_5_mini` or `claude_4_5_haiku` with `thinking_effort: "minimal"`
 **Grounded**: No
 
 ### Production Example (Insurance Slip — Classification)
@@ -83,7 +83,7 @@ Topics to cover:
 ```
 
 **When to use**: Investment analysis, market research, multi-section extraction, synthesized output
-**Recommended tool**: `gpt_5` or `gpt_5_1` with `thinking_effort: "medium"` or `"high"`
+**Recommended tool**: `gpt_5_5` or `claude_4_6_sonnet` with `thinking_effort: "medium"` or `"high"`
 **Grounded**: Depends — Yes if extracting from documents, No if synthesizing
 
 ### Production Example (Dataroom Screening — TAM & Projected Growth)
@@ -131,7 +131,7 @@ If anything is a red flag, type "Red Flag" before the element, instead of "Needs
 ```
 
 **When to use**: Contract review, compliance checking, policy evaluation, audit
-**Recommended tool**: `gpt_5` with `thinking_effort: "low"` to `"medium"`
+**Recommended tool**: `gpt_5_5` or `claude_4_6_sonnet` with `thinking_effort: "low"` to `"medium"`
 **Grounded**: Yes
 
 ### Production Example (NDA Compliance — Entity Verification)
@@ -196,7 +196,7 @@ Create a summary of [what to summarize] based on the following:
 ```
 
 **When to use**: Final summary, consolidated redline report, overall score justification
-**Recommended tool**: `gpt_5` with `thinking_effort: "low"`
+**Recommended tool**: `gpt_5_5` with `thinking_effort: "low"`
 **Grounded**: Yes (if aggregating document-sourced data)
 
 ### Production Example (NDA — Summary of Redlines)
@@ -229,7 +229,7 @@ Extract or calculate the requested field with precision and return output in a n
 ```
 
 **When to use**: Financial data extraction, standardized reporting, tear sheets
-**Recommended tool**: `gemini_2_5_flash` or `gpt_5` with `thinking_effort: "low"`
+**Recommended tool**: `gemini_3_flash` or `gpt_5_5` with `thinking_effort: "low"`
 **Grounded**: Yes
 
 ## Prompt Writing Rules

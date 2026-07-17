@@ -115,8 +115,10 @@ Use the V7 MCP tools to create the workflow:
 | `json` | Structured multi-field extraction | Financial data with multiple values |
 | `collection` | Tables or grouped items within a document | Line items, rent schedules |
 | `url` | Web links | Source URLs, document links |
-| `hub_select` | Knowledge Hub reference | Policy manual, guidelines |
+| `datetime` | Date and time values | Due dates, effective dates, timestamps |
+| `data` | Raw file/data input | CSV uploads, raw data files |
 | `number` | Numeric values | Prices, percentages, counts |
+| `reference` | Link to another workflow | Cross-referencing datasets |
 
 ## Available Tools (Logic Engines)
 
@@ -142,15 +144,16 @@ AI Citations are V7 Go's differentiator for trust and compliance. When enabled, 
 
 | Task | Model | Thinking Effort |
 |------|-------|----------------|
-| Simple extraction | Gemini 3 Flash | low |
-| Classification | GPT-5 Mini | minimal |
-| Structured JSON | GPT-5 | low |
-| Complex analysis | Claude 4.5 Sonnet | medium |
-| Knowledge Hub search | GPT-5 | low-medium |
-| Compliance review | Claude 4.5 Sonnet | medium |
-| Code / HTML generation | Claude 4.5 Sonnet | medium |
-| Summary / narrative | Gemini 3 Pro | low |
-| Data parsing | Python (code) | N/A (free) |
+| Simple extraction | `gemini_3_flash` | low |
+| Classification | `gpt_5_mini` or `claude_4_5_haiku` | minimal |
+| Structured JSON | `gpt_5_5` | low |
+| Complex analysis | `claude_4_6_sonnet` | medium |
+| Knowledge Hub search | `gpt_5_5` | low-medium |
+| Compliance review | `claude_4_6_sonnet` | medium |
+| Code / HTML generation | `claude_4_6_sonnet` / `claude_4_7_opus` | medium |
+| Summary / narrative | `gemini_3_1_pro` | low |
+| Deep reasoning | `claude_4_7_opus` / `gpt_5_5` (high) | high |
+| Data parsing | Python (`code`) | N/A (free) |
 
 See `references/model-selection-guide.md` for the full matrix and compatibility rules.
 
@@ -221,5 +224,5 @@ When helping V7 Go users:
 - **Check MCP connection first.** If the V7 MCP isn't connected, guide setup before doing anything else.
 - **Reference the docs.** When writing prompts, check `references/prompt-patterns.md`. When choosing models, check `references/model-selection-guide.md`.
 - **Check gotchas before deploying.** Skim `references/gotchas.md` (at minimum the Top 10) before creating or updating any workflow.
-- **Never use `auto_llm` as a tool.** This tool is deprecated and banned — always select a specific model.
+- **Avoid `auto_llm` as a tool.** While available, `auto_llm` may produce unpredictable model selection — always select a specific model instead.
 - **Set up views for routing.** After creating properties, set up views to filter and route results (see `references/views-reference.md`).

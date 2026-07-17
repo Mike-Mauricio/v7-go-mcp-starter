@@ -96,7 +96,7 @@ Based on their answer, suggest 2-3 fields to extract. Examples:
 Create a workflow with exactly 3 properties:
 
 1. **File Input** — `file` type, manual input. Where the user uploads their document.
-2. **Field 1 Extraction** — `text` type, appropriate model (default: `gemini_2_5_flash`, thinking: `low`, grounded: `true`). Extracts the first suggested field.
+2. **Field 1 Extraction** — `text` type, appropriate model (default: `gemini_3_flash`, thinking: `low`, grounded: `true`). Extracts the first suggested field.
 3. **Field 2 Extraction** — `text` type, same model configuration. Extracts the second suggested field.
 
 Optionally add a 4th property:

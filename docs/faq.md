@@ -31,13 +31,14 @@ It depends on the task. Here's the quick guide:
 
 | Task | Recommended Model | Why |
 |------|------------------|-----|
-| Simple extraction (names, dates, numbers) | Gemini 3 Flash | Fast, cheap, accurate |
-| Classification and tagging | GPT-5 Mini | Good at structured categories |
-| Structured JSON output | GPT-5 | Reliable JSON formatting |
-| Complex analysis and reasoning | Claude 4.5 Sonnet | Strong at nuanced judgment |
-| Knowledge Hub search | GPT-5 | Best at hub query synthesis |
-| Long document summarization | Gemini 3 Pro | Large context window |
-| Compliance and legal review | Claude 4.5 Sonnet | Strong at rule-based evaluation |
+| Simple extraction (names, dates, numbers) | `gemini_3_flash` | Fast, cheap, accurate |
+| Classification and tagging | `gpt_5_mini` or `claude_4_5_haiku` | Good at structured categories |
+| Structured JSON output | `gpt_5_5` | Reliable JSON formatting |
+| Complex analysis and reasoning | `claude_4_6_sonnet` | Strong at nuanced judgment |
+| Knowledge Hub search | `gpt_5_5` | Best at hub query synthesis |
+| Long document summarization | `gemini_3_1_pro` | Large context window |
+| Compliance and legal review | `claude_4_6_sonnet` | Strong at rule-based evaluation |
+| Deep reasoning / complex code | `claude_4_7_opus` | Most capable for hard tasks |
 
 See [references/model-selection-guide.md](../references/model-selection-guide.md) for the full matrix.
 
@@ -123,7 +124,7 @@ Yes. V7 Go connects to Salesforce, HubSpot, and other CRMs via MCP connectors or
 ### The AI extracted the wrong data
 Common causes and fixes:
 - **Prompt too vague** → Be more specific about what to extract and where to look
-- **Wrong model** → Try a more capable model (e.g., Claude 4.5 Sonnet for complex documents)
+- **Wrong model** → Try a more capable model (e.g., Claude 4.6 Sonnet for complex documents)
 - **Thinking effort too low** → Increase from `low` to `medium`
 - **No N/A handling** → Add "If not found, respond with N/A" to prevent hallucination
 - **Grounding not enabled** → Turn on grounding for document extraction properties

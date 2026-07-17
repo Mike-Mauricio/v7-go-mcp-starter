@@ -15,9 +15,11 @@ Properties are the building blocks of every V7 Go workflow. Each property define
 | [json](#json) | Extract structured data | Yes | Tables, line items, nested objects |
 | [collection](#collection) | Group repeatable property sets | N/A | Invoice line items, lease provisions |
 | [url](#url) | Capture or generate URLs | No | Links, references |
+| [datetime](#datetime) | Extract or set dates and times | No | Due dates, effective dates, timestamps |
+| [data](#data) | Raw file/data input | N/A | Manual data uploads, raw file inputs |
 | [hub_select](#hub_select) | Connect to a Knowledge Hub | N/A | Querying reference documents |
 | [number](#number) | Extract or calculate numbers | No | Amounts, scores, counts |
-| [page_splitter](#page_splitter) | Split documents into sections | N/A | Breaking multi-page PDFs into parts |
+| [page_splitter](#page_splitter) | Split documents into sections | N/A | Breaking multi-page PDFs into parts (UI only — not available through MCP) |
 | [reference](#reference) | Link to another workflow | N/A | Cross-referencing datasets |
 
 ---
@@ -139,6 +141,39 @@ Properties are the building blocks of every V7 Go workflow. Each property define
 
 ---
 
+### datetime
+
+**What it is:** Captures or extracts a date and/or time value. Returns a structured date/time object rather than free-form text.
+
+**When to use it:** Effective dates, due dates, filing deadlines, report dates, timestamps — any field where you need a proper date value rather than a text string.
+
+**Available tools:** `manual`, all AI models, `code`.
+
+**Grounding (AI Citations):** **No.** Datetime properties return a date value, not source-linked text.
+
+**Configuration notes:**
+- Datetime properties produce structured date/time values that can be used for sorting, filtering, and calculations.
+- For extracted dates, include format instructions in the prompt: "Extract the effective date."
+- Use datetime instead of text when you need to sort or filter by date — text dates don't sort correctly.
+
+---
+
+### data
+
+**What it is:** A raw file or data input property. Accepts uploaded files or raw data without AI processing.
+
+**When to use it:** When you need to accept a raw data file as input — CSV uploads, JSON data files, or other structured data that will be processed by downstream properties.
+
+**Available tools:** `manual` (user uploads or provides the data directly).
+
+**Grounding (AI Citations):** Not applicable — data properties hold raw inputs.
+
+**Configuration notes:**
+- Data properties are input-only — they accept raw file/data uploads.
+- Use data properties when you need a secondary data input alongside the primary file property.
+
+---
+
 ### hub_select
 
 **What it is:** Connects a workflow property to a Knowledge Hub. When a hub_select property is configured, the workflow can query your stored reference documents as part of its processing.
@@ -181,6 +216,8 @@ Properties are the building blocks of every V7 Go workflow. Each property define
 
 **Grounding (AI Citations):** Not applicable.
 
+**Important:** Page splitter properties are **not available through the MCP**. They can only be created and configured through the V7 Go UI. If a workflow needs page splitting, guide the user to set it up in the V7 Go interface.
+
 **Configuration notes:**
 - Page splitters are typically placed right after the file input property.
 - Useful for batch-in-one-file scenarios (a single PDF containing 50 invoices that each need individual extraction).
@@ -209,17 +246,15 @@ Every property that supports AI processing lets you choose which tool (model or 
 | Tool Name | Type | Notes |
 |-----------|------|-------|
 | `manual` | Human input | User fills in the value directly. No AI involved. |
-| `gpt_5` | AI Model | OpenAI GPT-5. General-purpose, strong across tasks. |
-| `gpt_5_1` | AI Model | OpenAI GPT-5.1. Enhanced reasoning. |
-| `gpt_5_2` | AI Model | OpenAI GPT-5.2. Latest GPT generation. |
-| `gpt_5_mini` | AI Model | OpenAI GPT-5 Mini. Faster and lower cost. Good for simpler extractions. |
-| `claude_4_5_sonnet` | AI Model | Anthropic Claude 4.5 Sonnet. Strong at nuanced analysis and compliance tasks. |
-| `claude_4_5_opus` | AI Model | Anthropic Claude 4.5 Opus. Most capable Claude model. Best for complex reasoning. |
-| `gemini_3_flash` | AI Model | Google Gemini 3 Flash. Fast, cost-effective. Great for high-volume extraction. |
-| `gemini_3_pro` | AI Model | Google Gemini 3 Pro. Higher capability Gemini model. |
-| `gemini_2_5_flash` | AI Model | Google Gemini 2.5 Flash. Previous generation, still available. |
-| `o3` | AI Model | OpenAI o3. Advanced reasoning model. Best for complex, multi-step logic. |
-| `o3_mini` | AI Model | OpenAI o3 Mini. Reasoning model at lower cost. |
+| `gpt_5_5` | AI Model | OpenAI GPT-5.5. Latest high-capability GPT. Strong at structured JSON and hub search. |
+| `gpt_5_mini` | AI Model | OpenAI GPT-5 Mini. Fast and low cost. Good for classification and simple extraction. |
+| `gemini_3_1_pro` | AI Model | Google Gemini 3.1 Pro. High-capability Gemini. Strong at narrative and long-context analysis. |
+| `gemini_3_flash` | AI Model | Google Gemini 3 Flash. Fast, cost-effective. Great for high-volume extraction and summaries. |
+| `gemini_3_1_flash_image` | AI Model | Google Gemini 3.1 Flash Image. Image generation model. |
+| `claude_4_7_opus` | AI Model | Anthropic Claude 4.7 Opus. Most capable Claude model. Best for deep reasoning and complex code. |
+| `claude_4_6_sonnet` | AI Model | Anthropic Claude 4.6 Sonnet. Strong at nuanced analysis, compliance, and document synthesis. |
+| `claude_4_5_haiku` | AI Model | Anthropic Claude 4.5 Haiku. Fast, low-cost Claude. Good for classification and simple tasks. |
+| `auto_llm` | AI Model | Platform default model selection. Available but may produce unpredictable model choices — prefer selecting a specific model. |
 | `code` | Code execution | Runs Python code. Zero AI cost — use for formatting, calculations, parsing. |
 | `web_search` | Web search | Searches the web for information. Useful for market data, company lookups. |
 
@@ -227,9 +262,9 @@ Every property that supports AI processing lets you choose which tool (model or 
 
 A few rules of thumb:
 
-- **High-volume, straightforward extraction** (names, dates, amounts from clear documents): Use `gemini_3_flash` or `gpt_5_mini` for speed and cost efficiency.
-- **Complex analysis or nuanced text** (contract clause interpretation, risk assessment): Use `claude_4_5_sonnet`, `gpt_5_1`, or `gpt_5_2`.
-- **Multi-step reasoning** (comparing terms across documents, applying complex rules): Use `o3` or `claude_4_5_opus`.
+- **High-volume, straightforward extraction** (names, dates, amounts from clear documents): Use `gemini_3_flash`, `gpt_5_mini`, or `claude_4_5_haiku` for speed and cost efficiency.
+- **Complex analysis or nuanced text** (contract clause interpretation, risk assessment): Use `claude_4_6_sonnet` or `gpt_5_5`.
+- **Multi-step reasoning** (comparing terms across documents, applying complex rules): Use `claude_4_7_opus` or `gpt_5_5` with high thinking effort.
 - **Formatting, math, parsing** (no AI needed): Use `code` — it's free and deterministic.
 
 ---
@@ -240,19 +275,19 @@ Some models support "thinking effort" — a setting that controls how much reaso
 
 | Level | Description | Model Compatibility |
 |-------|-------------|-------------------|
-| **disabled** | No extended thinking. Fastest, lowest cost. | GPT-5.1, Gemini 2.5 Flash, Claude (all), o3 |
-| **minimal** | Very light reasoning. | GPT-5, Gemini 3 Flash, Gemini 3 Pro |
-| **low** | Light reasoning for simple tasks. | o3, o3 Mini |
-| **medium** | Moderate reasoning. Good default for most tasks. | Claude (all), o3, o3 Mini |
-| **high** | Thorough reasoning. Use for complex extractions. | All supported models |
-| **max** | Maximum reasoning. Use for the hardest tasks. | o3, o3 Mini |
+| **disabled** | No extended thinking. Fastest, lowest cost. | `claude_4_7_opus`, `claude_4_6_sonnet` |
+| **minimal** | Very light reasoning. | `gpt_5_mini`, `gemini_3_flash` |
+| **low** | Light reasoning for simple tasks. | `gpt_5_mini`, `gemini_3_flash` |
+| **medium** | Moderate reasoning. Good default for most tasks. | `gpt_5_mini`, `gemini_3_flash`, `claude_4_7_opus`, `claude_4_6_sonnet` |
+| **high** | Thorough reasoning. Use for complex extractions. | `gpt_5_mini`, `gemini_3_flash`, `claude_4_7_opus`, `claude_4_6_sonnet` |
+
+For `gpt_5_5`, `gemini_3_1_pro`, and `claude_4_5_haiku`: Check V7 Go docs for current thinking effort compatibility.
 
 ### Important Compatibility Notes
 
-- **Claude models** do **not** support `low` thinking effort. Claude jumps from `disabled` directly to `medium`. If you need light reasoning with Claude, use `medium`.
-- **GPT-5** and **Gemini 3** models support `minimal` as their lowest thinking level.
-- **GPT-5.1** and **Gemini 2.5** support `disabled` as their lowest (thinking fully off).
-- **o3 models** start at `low` and go up to `max`. They do not support `disabled` or `minimal`.
+- **Claude Sonnet/Opus** do **not** support `low` thinking effort. Claude jumps from `disabled` directly to `medium`. If you need light reasoning with Claude, use `medium`.
+- **GPT-5 Mini** and **Gemini 3 Flash** support `minimal` as their lowest thinking level.
+- **GPT-5.5**, **Gemini 3.1 Pro**, and **Claude 4.5 Haiku** are newer models — check V7 Go docs for their current thinking effort support.
 
 ---
 

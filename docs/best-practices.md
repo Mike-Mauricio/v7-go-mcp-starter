@@ -83,13 +83,14 @@ Different AI models are better at different things. Don't use the same model for
 
 | Task Type | Best Model | Why |
 |-----------|-----------|-----|
-| Fast extraction | Gemini 3 Flash | Speed + low cost |
-| Classification | GPT-5 Mini | Good at categories |
-| Structured JSON | GPT-5 | Reliable formatting |
-| Complex analysis | Claude 4.5 Sonnet | Strong reasoning |
-| Hub search | GPT-5 | Best at hub queries |
-| Long summaries | Gemini 3 Pro | Large context |
-| Compliance review | Claude 4.5 Sonnet | Rule evaluation |
+| Fast extraction | `gemini_3_flash` | Speed + low cost |
+| Classification | `gpt_5_mini` or `claude_4_5_haiku` | Good at categories |
+| Structured JSON | `gpt_5_5` | Reliable formatting |
+| Complex analysis | `claude_4_6_sonnet` | Strong reasoning |
+| Hub search | `gpt_5_5` | Best at hub queries |
+| Long summaries | `gemini_3_1_pro` | Large context |
+| Compliance review | `claude_4_6_sonnet` | Rule evaluation |
+| Deep reasoning | `claude_4_7_opus` | Complex code + analysis |
 
 **Why:** Using the right model per task can cut costs by 50-80% while maintaining or improving accuracy.
 
@@ -99,12 +100,12 @@ Different AI models are better at different things. Don't use the same model for
 
 The `low` thinking effort level works on all models and is sufficient for most extraction and classification tasks. Only increase when needed:
 
-- `minimal` — For trivial tasks (yes/no, simple lookup). Only works with GPT-5/Gemini 3 family.
-- `low` — Default starting point. Works on all models.
+- `minimal` — For trivial tasks (yes/no, simple lookup). Works with GPT-5 Mini and Gemini 3 Flash.
+- `low` — Default starting point. Works on most models (not Claude).
 - `medium` — For multi-step reasoning, comparisons, analysis.
 - `high` — For deep reasoning, complex compliance review.
 
-**Important exception:** Claude models don't support `low` — jump from `disabled` to `medium`.
+**Important exception:** Claude models (Sonnet, Opus) don't support `low` — jump from `disabled` to `medium`. For GPT-5.5, Gemini 3.1 Pro, and Claude 4.5 Haiku, check V7 Go docs for current thinking effort compatibility.
 
 **Why:** Higher thinking effort is slower and more expensive. Start low, increase only if accuracy isn't good enough.
 

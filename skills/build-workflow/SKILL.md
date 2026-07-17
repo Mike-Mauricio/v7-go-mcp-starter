@@ -68,23 +68,25 @@ Read `references/model-selection-guide.md` for the full decision matrix. Quick r
 
 | Task | Model | Thinking Effort |
 |------|-------|----------------|
-| Simple extraction | `gemini_2_5_flash` or `gemini_3_flash` | `low` |
-| Classification / tagging | `gemini_3_flash` or `gpt_5_mini` | `minimal` |
-| Structured JSON output | `gpt_5` | `low` |
-| Complex multi-field extraction | `gpt_5_1` or `claude_4_5_sonnet` | `medium` |
-| Compliance review / redlines | `claude_4_5_sonnet` | `medium` |
-| Summary / narrative | `gemini_3_flash` or `gemini_3_pro` | `low` |
-| Knowledge Hub search | `gpt_5` | `low` to `medium` |
-| Code / HTML generation | `claude_4_5_sonnet` | `medium` |
+| Simple extraction | `gemini_3_flash` | `low` |
+| Classification / tagging | `gemini_3_flash`, `gpt_5_mini`, or `claude_4_5_haiku` | `minimal` |
+| Structured JSON output | `gpt_5_5` | `low` |
+| Complex multi-field extraction | `gpt_5_5` or `claude_4_6_sonnet` | `medium` |
+| Compliance review / redlines | `claude_4_6_sonnet` | `medium` |
+| Summary / narrative | `gemini_3_flash` or `gemini_3_1_pro` | `low` |
+| Knowledge Hub search | `gpt_5_5` | `low` to `medium` |
+| Code / HTML generation | `claude_4_6_sonnet` or `claude_4_7_opus` | `medium` |
+| Deep reasoning | `claude_4_7_opus` or `gpt_5_5` (high) | `high` |
 | Data parsing / formatting | `code` (Python) | N/A (free) |
 
 **Key rule:** A well-designed workflow uses multiple models. Use the best model for each task, not a single default. A typical workflow might use Gemini for classification, GPT for extraction, Claude for compliance, and Python for formatting.
 
 **Thinking effort compatibility:**
-- `minimal` only works with GPT-5/GPT-5 Mini/Gemini 3 family
-- `disabled` works with GPT-5.1/Gemini 2.5/Claude
-- `low` works on all models (safe default)
+- `minimal` works with GPT-5 Mini and Gemini 3 Flash
+- `disabled` works with Claude (Sonnet and Opus)
+- `low` works on most models (safe default for non-Claude models)
 - Never use `low` with Claude — jump from `disabled` to `medium`
+- For GPT-5.5, Gemini 3.1 Pro, and Claude 4.5 Haiku: check V7 Go docs for current compatibility
 
 ## Step 5: Write Prompts
 
@@ -119,7 +121,7 @@ Use the V7 MCP tools to create the workflow. Follow this sequence:
 
 1. Create the project (agent) with the agreed name
 2. Add properties one at a time, in order (later properties may reference earlier ones)
-3. After each property is added, report progress: "Added 3/8: Company Name (text, GPT-5, grounded)"
+3. After each property is added, report progress: "Added 3/8: Company Name (text, GPT-5.5, grounded)"
 
 If any MCP call fails, explain what happened in plain language and suggest a fix. Do not show raw error messages to the user.
 
@@ -146,4 +148,4 @@ If the user runs into issues during building or testing:
 - **Inconsistent outputs** — Tighten the prompt with explicit formatting rules. Consider switching to a stronger model.
 - **Wrong classifications** — Add clearer descriptions for each option in the prompt. Add edge case examples.
 - **Slow performance** — Check if a lighter model can handle the task. Lower thinking effort. Replace LLM calls with Python code where possible.
-- **High cost** — Bundle related extractions into a single JSON property. Use `gpt_5_mini` or `gemini_3_flash` for simple tasks. Use `code` for formatting and calculations.
+- **High cost** — Bundle related extractions into a single JSON property. Use `gpt_5_mini`, `gemini_3_flash`, or `claude_4_5_haiku` for simple tasks. Use `code` for formatting and calculations.

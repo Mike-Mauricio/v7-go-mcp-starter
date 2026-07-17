@@ -35,11 +35,11 @@ A commercial insurance carrier receives submission packets from brokers. Each pa
 |------|--------------|------|-------------|
 | Upload | file | manual | Broker uploads the submission packet. |
 | Document Type | single_select | gemini_3_flash | Classifies each document: application, loss run, schedule, supplemental. |
-| Key Fields | json | gpt_5 | Extracts insured name, effective dates, coverage lines, limits, and deductibles. |
-| Loss History | json | gpt_5 | Pulls loss run data: dates of loss, amounts, claim status. |
-| Guideline Check | text | claude_4_5_sonnet | Compares extracted data against underwriting guidelines stored in a Knowledge Hub. |
-| Summary | text | claude_4_5_sonnet | Generates a one-page submission summary with key metrics and flags. |
-| Triage Status | single_select | claude_4_5_sonnet | Assigns: "Auto-Decline," "Refer to Underwriter," or "Fast Track." |
+| Key Fields | json | gpt_5_5 | Extracts insured name, effective dates, coverage lines, limits, and deductibles. |
+| Loss History | json | gpt_5_5 | Pulls loss run data: dates of loss, amounts, claim status. |
+| Guideline Check | text | claude_4_6_sonnet | Compares extracted data against underwriting guidelines stored in a Knowledge Hub. |
+| Summary | text | claude_4_6_sonnet | Generates a one-page submission summary with key metrics and flags. |
+| Triage Status | single_select | claude_4_6_sonnet | Assigns: "Auto-Decline," "Refer to Underwriter," or "Fast Track." |
 
 ---
 
@@ -73,7 +73,7 @@ An investment firm processes quarterly financial statements from portfolio compa
 | Balance Sheet | json | gemini_3_flash | Parallel | Extracts assets, liabilities, equity, key ratios. |
 | Cash Flow | json | gemini_3_flash | Parallel | Extracts operating, investing, and financing cash flows. |
 | Key Metrics | number (x5) | code | Parallel | Calculates EBITDA, debt-to-equity, current ratio, etc. from extracted data. |
-| Executive Summary | text | claude_4_5_sonnet | After all above | Synthesizes all extractions into a narrative summary with trend analysis. |
+| Executive Summary | text | claude_4_6_sonnet | After all above | Synthesizes all extractions into a narrative summary with trend analysis. |
 
 The first five extraction steps all run at the same time against the uploaded document. The summary waits for all of them to finish.
 
@@ -139,11 +139,11 @@ A specialty insurer checks every new submission against their published underwri
 | Step | Property Type | Tool | What It Does |
 |------|--------------|------|-------------|
 | Upload | file | manual | Submission documents uploaded. |
-| Extract Submission Data | json | gpt_5 | Pulls: industry class, revenue, loss history, requested limits. |
+| Extract Submission Data | json | gpt_5_5 | Pulls: industry class, revenue, loss history, requested limits. |
 | Underwriting Guidelines | hub_select | — | Connects to the Knowledge Hub containing the carrier's underwriting manual. |
-| Compliance Check | text | claude_4_5_sonnet | Reads extracted data + underwriting guidelines. Reports which guidelines are met, which are not, and which are borderline. Cites specific guideline sections. |
+| Compliance Check | text | claude_4_6_sonnet | Reads extracted data + underwriting guidelines. Reports which guidelines are met, which are not, and which are borderline. Cites specific guideline sections. |
 | Risk Score | number | code | Calculates a numeric risk score based on compliance results. |
-| Recommendation | single_select | claude_4_5_sonnet | "Within Guidelines," "Refer — Exceptions Needed," or "Decline — Outside Appetite." |
+| Recommendation | single_select | claude_4_6_sonnet | "Within Guidelines," "Refer — Exceptions Needed," or "Decline — Outside Appetite." |
 
 The compliance check property explicitly references the Knowledge Hub content, so every recommendation is grounded in the carrier's actual rules — not the model's general training.
 
@@ -199,9 +199,9 @@ Each property in a workflow can use a different model. You match the model's str
 | Task Type | Best Model Choice | Why |
 |-----------|------------------|-----|
 | Simple extraction (names, dates, amounts) | Gemini 3 Flash | Fast, cheap, accurate on straightforward fields. |
-| Structured JSON extraction | GPT-5 | Strong at following JSON schemas precisely. |
-| Nuanced analysis and compliance | Claude 4.5 Sonnet | Excellent at interpreting context, comparing against guidelines. |
-| Complex multi-step reasoning | o3 or Claude 4.5 Opus | Best for tasks that require extended chain-of-thought reasoning. |
+| Structured JSON extraction | GPT-5.5 | Strong at following JSON schemas precisely. |
+| Nuanced analysis and compliance | Claude 4.6 Sonnet | Excellent at interpreting context, comparing against guidelines. |
+| Complex multi-step reasoning | Claude 4.7 Opus or GPT-5.5 (high) | Best for tasks that require extended chain-of-thought reasoning. |
 | Calculations and formatting | Code (Python) | Zero cost, deterministic, instant. |
 
 ### When to Use It
@@ -218,14 +218,14 @@ A private equity firm processes due diligence documents for a potential acquisit
 |------|--------------|------|---------------|
 | Document Classification | single_select | gemini_3_flash | Fast classification — doesn't need heavy reasoning. |
 | Key Terms Extraction | json | gemini_3_flash | Straightforward field extraction from structured documents. |
-| Financial Data | json | gpt_5 | Complex table extraction with precise JSON schema adherence. |
-| Compliance Review | text | claude_4_5_sonnet | Nuanced analysis comparing terms against fund's investment criteria. Needs strong contextual reasoning. |
-| Red Flag Detection | text | o3 | Multi-step reasoning across all extracted data to identify non-obvious risk patterns. |
+| Financial Data | json | gpt_5_5 | Complex table extraction with precise JSON schema adherence. |
+| Compliance Review | text | claude_4_6_sonnet | Nuanced analysis comparing terms against fund's investment criteria. Needs strong contextual reasoning. |
+| Red Flag Detection | text | claude_4_7_opus | Multi-step reasoning across all extracted data to identify non-obvious risk patterns. |
 | Metric Calculations | number (x6) | code | Ratios, growth rates, multiples — pure math, zero cost. |
-| Executive Summary | text | claude_4_5_sonnet | Synthesizes all findings into a polished narrative. |
+| Executive Summary | text | claude_4_6_sonnet | Synthesizes all findings into a polished narrative. |
 | Deal Score | number | code | Weighted scoring formula based on all extracted metrics and flags. |
 
-This pipeline uses Gemini for speed on simple tasks, GPT-5 for JSON precision, Claude for analytical depth, o3 for complex reasoning, and code for calculations. Each model is playing to its strengths.
+This pipeline uses Gemini for speed on simple tasks, GPT-5.5 for JSON precision, Claude Sonnet for analytical depth, Claude Opus for complex reasoning, and code for calculations. Each model is playing to its strengths.
 
 ---
 
@@ -263,9 +263,9 @@ A finance team processes vendor invoices with strict accuracy requirements for A
 |------|--------------|------|---------|
 | Invoice Upload | file | manual | User uploads the invoice |
 | Document Type | single_select | gemini_3_flash | Classify: standard invoice, credit memo, or debit note |
-| Extraction A | json | gpt_5 | Extract: vendor, amount, date, line items, tax |
-| Extraction B | json | gemini_2_5_pro | Same extraction, different provider |
-| Judge | json | claude_4_5_sonnet | Compare A vs B, verify against source, produce final output |
+| Extraction A | json | gpt_5_5 | Extract: vendor, amount, date, line items, tax |
+| Extraction B | json | gemini_3_1_pro | Same extraction, different provider |
+| Judge | json | claude_4_6_sonnet | Compare A vs B, verify against source, produce final output |
 | Result | single_select | code | "STP" if judge says all_passed, "Needs Review" if not |
 
 **Views:** Create a "Straight-Through" view filtered to Result = STP, and a "Needs Review" view for discrepancies. Enable AI Citations on the Judge property so reviewers can see exactly where the judge found each value.
