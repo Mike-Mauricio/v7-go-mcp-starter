@@ -32,41 +32,25 @@ Always derive the region from the host, never from the workspace UUID.
 
 ---
 
-## MCP Configuration
+## MCP Connection
+
+Add V7 Go as a connector directly in your AI tool's settings — no config files needed.
 
 ### EU Instance
 
-```json
-{
-  "mcpServers": {
-    "v7-go": {
-      "type": "streamable-http",
-      "url": "https://mcp.go.v7labs.com",
-      "headers": {
-        "X-API-KEY": "<your-eu-api-key>"
-      }
-    }
-  }
-}
-```
+1. Open Settings → Connectors → Add Custom Connector
+2. Name: **V7 Go**
+3. URL: `https://mcp.go.v7labs.com`
+4. Complete OAuth login and select your EU workspace
 
 ### US Instance
 
-```json
-{
-  "mcpServers": {
-    "v7-go": {
-      "type": "streamable-http",
-      "url": "https://mcp.go.us.v7labs.com",
-      "headers": {
-        "X-API-KEY": "<your-us-api-key>"
-      }
-    }
-  }
-}
-```
+1. Open Settings → Connectors → Add Custom Connector
+2. Name: **V7 Go (US)**
+3. URL: `https://mcp.go.us.v7labs.com`
+4. Complete OAuth login and select your US workspace
 
-Place this in your `.mcp.json` file at the root of your project.
+V7 Go will appear as a connector in your AI tool once authenticated.
 
 ---
 

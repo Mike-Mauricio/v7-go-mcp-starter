@@ -30,26 +30,27 @@ Let's get you set up."
 
 Verify the V7 MCP connection is working.
 
-### If `.mcp.json` does not exist:
+### If V7 Go is not connected:
 
 Tell the user:
 
-"First, we need to connect to your V7 Go workspace. Here is what to do:"
+"First, we need to connect to your V7 Go workspace. Here's how:"
 
-1. "I will create your connection config file." Copy `.mcp.json.example` to `.mcp.json` in the project root.
-2. "Now restart your AI tool (close and reopen) so it picks up the new connection."
-3. "When it restarts, you will see an authentication prompt from V7 Go. Follow it to log in and select your workspace."
-4. "Once that is done, come back here and say 'ready' — I will verify the connection."
+1. "Open your AI tool's settings and go to **Connectors** (or **MCP Servers**)."
+2. "Add a new custom connector named **V7 Go**."
+3. "Paste the MCP URL: `https://mcp.go.v7labs.com` (or `https://mcp.go.us.v7labs.com` for US region)."
+4. "Complete the OAuth login in your browser and select your workspace."
+5. "Once connected, come back here and say 'ready' — I'll verify the connection."
 
-### If `.mcp.json` exists but the MCP is not responding:
+### If the MCP connector exists but is not responding:
 
 Tell the user:
 
-"The config file exists, but the V7 Go connection is not active. Try these steps:"
+"V7 Go appears to be configured but the connection isn't active. Try these steps:"
 
-1. "Restart your AI tool to reload the MCP server."
-2. "If you see an authentication prompt, complete the login flow."
-3. "If it still does not connect, check that your V7 Go account is active and you have workspace access."
+1. "Check your connector settings — make sure V7 Go is listed and enabled."
+2. "Try disconnecting and reconnecting the V7 Go connector."
+3. "If it still doesn't connect, check that your V7 Go account is active and you have workspace access."
 
 ### If the MCP is connected:
 

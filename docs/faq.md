@@ -114,12 +114,13 @@ Yes. V7 Go connects to Salesforce, HubSpot, and other CRMs via MCP connectors or
 ## Troubleshooting
 
 ### My MCP connection isn't working
-1. Make sure you've copied `.mcp.json.example` to `.mcp.json`
+1. Check that V7 Go is added as a connector in your AI tool's settings (Settings → Connectors → Add Custom Connector)
 2. Verify you're using the correct regional URL:
    - EU: `https://mcp.go.v7labs.com`
    - US: `https://mcp.go.us.v7labs.com`
-3. Complete the OAuth authentication in your browser when prompted
-4. Check that you selected the correct workspace during auth
+3. Try disconnecting and reconnecting the V7 Go connector
+4. Complete the OAuth authentication in your browser when prompted
+5. Check that you selected the correct workspace during auth
 
 ### The AI extracted the wrong data
 Common causes and fixes:

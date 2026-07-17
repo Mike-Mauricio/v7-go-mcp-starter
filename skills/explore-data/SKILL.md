@@ -18,10 +18,9 @@ Before doing anything, verify the V7 MCP is connected and responsive.
 If the V7 MCP is not connected:
 1. Tell the user: "It looks like the V7 Go connection is not set up yet."
 2. Guide them through setup:
-   - Copy `.mcp.json.example` to `.mcp.json` in the project root
-   - Restart their AI tool to load the MCP server
-   - Complete OAuth authentication when prompted
-   - Select their workspace
+   - Open your AI tool's settings → **Connectors** (or **MCP Servers**)
+   - Add a custom connector named **V7 Go** with URL: `https://mcp.go.v7labs.com` (US: `https://mcp.go.us.v7labs.com`)
+   - Complete OAuth authentication in your browser and select your workspace
 3. Once connected, continue to Step 2.
 
 ## Step 2: Understand the Question

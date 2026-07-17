@@ -20,43 +20,36 @@ git clone https://github.com/Mike-Mauricio/v7-go-mcp-starter.git
 cd v7-go-mcp-starter
 ```
 
-### 2. Connect to V7 Go
+### 2. Connect V7 Go to your AI tool
 
-Copy the MCP configuration template:
+Add V7 Go as a connector directly in your AI tool's settings:
 
-```bash
-cp .mcp.json.example .mcp.json
-```
+**Claude Code / Claude Desktop:**
+1. Open **Settings** → **Connectors**
+2. Click **+** → **Add Custom Connector**
+3. Name it **V7 Go**
+4. Paste the MCP server URL: `https://mcp.go.v7labs.com`
+   - US region: `https://mcp.go.us.v7labs.com`
+5. Complete the OAuth login in your browser and select your workspace
 
-The `.mcp.json` file connects your AI tool to V7 Go's MCP server:
+**Cursor:**
+1. Open **Settings** → **MCP Servers**
+2. Add a new server with the V7 Go MCP URL
+3. Authenticate via the browser prompt
 
-```json
-{
-  "mcpServers": {
-    "v7-go": {
-      "type": "http",
-      "url": "https://mcp.go.v7labs.com"
-    }
-  }
-}
-```
+**Codex:**
+1. Add V7 Go as an MCP connector in your tool's settings
+2. Use the MCP URL above and authenticate via OAuth
 
-> **US region?** Change the URL to `https://mcp.go.us.v7labs.com`
+Once connected, V7 Go appears as a connector in your AI tool — no config files needed.
 
-### 3. Open in your AI tool
+### 3. Open this repo in your AI tool
 
-**Claude Code:**
-```bash
-claude
-```
+**Claude Code:** Navigate to the repo folder in your terminal and run `claude`
 
-**Cursor:** Open the folder in Cursor — it reads `.cursorrules` automatically.
+**Cursor:** Open the folder in Cursor — it reads `.cursorrules` automatically
 
-**Codex:** Open the folder — it reads `AGENTS.md` automatically.
-
-### 4. Authenticate
-
-When your AI tool starts, it will connect to the V7 MCP server and prompt you to authenticate via your browser. Log in with your V7 Go credentials and select your workspace.
+**Codex:** Open the folder — it reads `AGENTS.md` automatically
 
 ### 5. Build your first workflow
 

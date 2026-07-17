@@ -8,11 +8,10 @@ This guide walks you through building a simple document extraction workflow in a
 
 If you haven't already:
 
-1. Copy the MCP config: `cp .mcp.json.example .mcp.json`
-2. Edit `.mcp.json` if you're in the US region (change URL to `https://mcp.go.us.v7labs.com`)
-3. Open the repo in your AI tool (Claude Code, Cursor, or Codex)
-4. When prompted, authenticate with your V7 Go credentials in the browser
-5. Select your workspace
+1. Add V7 Go as a connector in your AI tool's settings (Settings → Connectors → Add Custom Connector)
+2. Use the MCP URL: `https://mcp.go.v7labs.com` (US region: `https://mcp.go.us.v7labs.com`)
+3. Complete the OAuth login and select your workspace
+4. Open this repo folder in your AI tool (Claude Code, Cursor, or Codex)
 
 **How to know it's working:** Ask your AI assistant "Can you list my V7 Go workflows?" If it returns results (or says your workspace is empty), you're connected.
 
